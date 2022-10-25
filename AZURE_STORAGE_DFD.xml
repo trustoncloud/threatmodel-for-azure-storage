@@ -1,0 +1,492 @@
+<mxfile host="Electron" modified="2022-03-29T01:27:53.483Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/17.2.4 Chrome/96.0.4664.174 Electron/16.1.0 Safari/537.36" etag="xpnztypwpAd9ev_tfqgh" compressed="false" version="17.2.4" type="device">
+  <diagram id="Qtj8Tx1XBrKoPnwNpXfv" name="Page-1">
+    <mxGraphModel dx="2130" dy="1191" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <object feature_class="" label="Any Subscription / Any Tenant" threat="FC8_T10" id="0LCSYkjx8e5zjCw90O-2-3">
+          <mxCell style="whiteSpace=wrap;html=1;grIcon=mxgraph.aws4.group_region;shape=mxgraph.aws4.group;fontColor=#147EBA;fontSize=12;fontStyle=0;fillColor=none;outlineConnect=0;align=left;verticalAlign=top;dashed=0;strokeColor=#147EBA;gradientColor=none;points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];spacingLeft=30" parent="1" vertex="1">
+            <mxGeometry x="170" y="80" width="350" height="130" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="" label="" threat="FC7_T1,FC7_T2,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="zWG-i_AXv9CZwfDGfDFG-2">
+          <mxCell style="fontColor=#5A6C86;whiteSpace=wrap;align=center;fontStyle=0;fillColor=none;dashed=1;verticalAlign=top;strokeColor=#5A6C86" parent="1" vertex="1">
+            <mxGeometry x="-300" y="560" width="180" height="230" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="" label="Azure Active Directory" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-30">
+          <mxCell style="fontColor=#5A6C86;whiteSpace=wrap;align=center;fontStyle=0;fillColor=none;dashed=1;verticalAlign=top;strokeColor=#5A6C86" parent="1" vertex="1">
+            <mxGeometry x="-400" y="150" width="150" height="330" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="replicate" feature_class="FC9" threat="FC9_T13" id="Qy1xeNws0UDpEFEuDrA6-10">
+          <mxCell style="rounded=1;entryY=0.5;orthogonalLoop=1;jettySize=auto;html=1;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;entryX=0;endArrow=block;entryDy=0;entryDx=0;endFill=1" parent="1" target="QMkIZDO7Pbn6Bd9JF3Vb-1" edge="1">
+            <mxGeometry x="-0.1429" relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="540" y="400" />
+                <mxPoint x="540" y="400" />
+              </Array>
+              <mxPoint as="offset" />
+              <mxPoint x="500" y="400" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC6,FC9,FC10" label="Subscription/Tenant" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC8_T10,FC1_T11,FC2_T12,FC1_T14,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T23,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-3">
+          <mxCell style="whiteSpace=wrap;html=1;grIcon=mxgraph.aws4.group_region;shape=mxgraph.aws4.group;fontColor=#147EBA;fontSize=12;fontStyle=0;fillColor=none;outlineConnect=0;align=left;verticalAlign=top;dashed=0;strokeColor=#147EBA;gradientColor=none;points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];spacingLeft=30" parent="1" vertex="1">
+            <mxGeometry x="170" y="230" width="350" height="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="" label="Control Plane Endpoint&lt;br&gt;management.azure.com" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC4_T27,FC5_T28,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-4">
+          <mxCell style="html=1;pointerEvents=1;labelBackgroundColor=#ffffff;fillColor=#5A30B5;verticalLabelPosition=bottom;fontColor=#232F3E;align=center;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.endpoint;verticalAlign=top;dashed=0;gradientColor=none;strokeColor=none;outlineConnect=0" parent="1" vertex="1">
+            <mxGeometry x="150" y="270" width="40" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="7wCJVVn6IqJLDXxpWDTT-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="170" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <object label="create by authorized user (bounded to a specific storage account)" feature_class="FC7" threat="FC7_T1,FC7_T2" id="zWG-i_AXv9CZwfDGfDFG-6">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="7wCJVVn6IqJLDXxpWDTT-10" target="zWG-i_AXv9CZwfDGfDFG-2" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="405" y="820" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="405" y="820" />
+                <mxPoint x="-205" y="820" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="" feature_class="FC8" threat="FC8_T10" id="0LCSYkjx8e5zjCw90O-2-2">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="7wCJVVn6IqJLDXxpWDTT-10" target="0LCSYkjx8e5zjCw90O-2-3" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="440" y="70" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="405" y="220" />
+                <mxPoint x="405" y="220" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Storage account" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC8_T10,FC1_T11,FC2_T12,FC1_T14,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T23,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" feature_class="FC9,FC10" id="7wCJVVn6IqJLDXxpWDTT-10">
+          <mxCell style="html=1;fontStyle=0;container=1;spacingTop=4;rounded=0;dashed=0;fillColor=none;strokeColor=#919191;verticalAlign=top;expand=0;whiteSpace=wrap;spacing=-4;shape=mxgraph.ibm.box;strokeWidth=2;spacingLeft=32;collapsible=0;recursiveResize=0;prType=region;align=left" parent="1" vertex="1">
+            <mxGeometry x="310" y="250" width="190" height="530" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="" label="" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC8_T10,FC1_T11,FC2_T12,FC9_T13,FC1_T14,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T23,FC10_T24,FC6_T25,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="khpNWXbXB9I4wqvf5BjM-3">
+          <mxCell style="fontColor=#5A6C86;whiteSpace=wrap;align=center;fontStyle=0;fillColor=none;dashed=1;verticalAlign=top;strokeColor=#5A6C86" parent="7wCJVVn6IqJLDXxpWDTT-10" vertex="1">
+            <mxGeometry x="60" y="30" width="110" height="340" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Blob/Directory" threat="FC7_T1,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC8_T10,FC1_T11,FC2_T12,FC9_T13,FC1_T14,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T23,FC10_T24,FC6_T25,FC1_T26,FC5_T28,FC1_T29,FC2_T30" feature_class="" id="khpNWXbXB9I4wqvf5BjM-4">
+          <mxCell style="html=1;align=center;fontSize=12;aspect=fixed;points=[];image;image=img/lib/azure2/general/Blob_Block.svg" parent="7wCJVVn6IqJLDXxpWDTT-10" vertex="1">
+            <mxGeometry x="90" y="280" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Tables" threat="FC7_T1,FC1_T4,FC2_T5,FC8_T10,FC1_T11,FC9_T13,FC1_T14,FC1_T23,FC1_T26,FC1_T29" feature_class="FC10" id="P6pNr-OZ-YctnmqwA1_8-1">
+          <mxCell style="html=1;align=center;fontSize=12;aspect=fixed;image=img/lib/azure2/general/Table.svg;points=[];image" parent="7wCJVVn6IqJLDXxpWDTT-10" vertex="1">
+            <mxGeometry x="90" y="60" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Files" threat="FC7_T1,FC1_T4,FC2_T5,FC8_T10,FC1_T11,FC9_T13,FC1_T14,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC1_T23,FC6_T25,FC1_T26,FC1_T29,FC2_T30" feature_class="FC10" id="P6pNr-OZ-YctnmqwA1_8-4">
+          <mxCell style="html=1;align=center;fontSize=12;aspect=fixed;points=[];image;image=img/lib/azure2/general/Storage_Azure_Files.svg" parent="7wCJVVn6IqJLDXxpWDTT-10" vertex="1">
+            <mxGeometry x="90" y="210" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Queues" threat="FC7_T1,FC1_T4,FC2_T5,FC8_T10,FC1_T11,FC9_T13,FC1_T14,FC1_T23,FC1_T26,FC4_T27,FC1_T29,FC4_T31,FC4_T32" feature_class="FC10" id="P6pNr-OZ-YctnmqwA1_8-5">
+          <mxCell style="html=1;align=center;fontSize=12;aspect=fixed;points=[];image;image=img/lib/mscae/Queues_Storage.svg;sketch=0" parent="7wCJVVn6IqJLDXxpWDTT-10" vertex="1">
+            <mxGeometry x="90" y="130" width="50" height="50" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Data Share" threat="FC1_T23" feature_class="FC10" id="J7GUKvc5OmkMldF1lemn-1">
+          <mxCell style="html=1;pointerEvents=1;verticalLabelPosition=bottom;shape=mxgraph.azure.storage;align=center;verticalAlign=top;fillColor=#00BEF2;strokeColor=none" parent="7wCJVVn6IqJLDXxpWDTT-10" vertex="1">
+            <mxGeometry x="90" y="450" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="get data" feature_class="FC10" threat="FC1_T23" id="J7GUKvc5OmkMldF1lemn-2">
+          <mxCell style="html=1;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;entryDx=0;endArrow=none;endFill=0;entryX=0.5;rounded=1;entryPerimeter=0;entryY=0;jettySize=auto;entryDy=0;startArrow=block;startFill=1;" parent="7wCJVVn6IqJLDXxpWDTT-10" source="khpNWXbXB9I4wqvf5BjM-3" target="J7GUKvc5OmkMldF1lemn-1" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="200" y="290" as="sourcePoint" />
+              <mxPoint x="340" y="290" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC10" label="&lt;div&gt;Caller&lt;br&gt;IAM permissions&lt;/div&gt;" threat="FC1_T23" id="J7GUKvc5OmkMldF1lemn-3">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="7wCJVVn6IqJLDXxpWDTT-10" edge="1">
+            <mxGeometry x="1" y="45" relative="1" as="geometry">
+              <mxPoint x="105" y="390" as="sourcePoint" />
+              <mxPoint x="125" y="390" as="targetPoint" />
+              <mxPoint x="45" y="45" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="" threat="FC7_T1,FC7_T3,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T26,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-15">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="Y7Q4RMsMM1sopYpJf5bS-13" target="7wCJVVn6IqJLDXxpWDTT-20" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="-208" y="480" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="180" y="450" />
+                <mxPoint x="180" y="550" />
+              </Array>
+              <mxPoint x="121" y="550" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-16">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="7wCJVVn6IqJLDXxpWDTT-30" target="7wCJVVn6IqJLDXxpWDTT-22" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="-300" y="640" as="sourcePoint" />
+              <mxPoint x="-120" y="550" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="-170" y="390" />
+                <mxPoint x="-170" y="290" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="" threat="FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-18">
+          <mxCell style="rounded=1;endArrow=block;orthogonalLoop=1;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;jettySize=auto" parent="1" edge="1" target="Y7Q4RMsMM1sopYpJf5bS-13">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="91" y="450" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="-169" y="390" />
+                <mxPoint x="-169" y="450" />
+              </Array>
+              <mxPoint x="-249" y="390" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="using DFS token&lt;br&gt;(vended by AD)" threat="FC7_T1,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-19">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="7wCJVVn6IqJLDXxpWDTT-22" target="Y7Q4RMsMM1sopYpJf5bS-13" edge="1">
+            <mxGeometry x="-0.0476" y="20" relative="1" as="geometry">
+              <mxPoint x="82" y="340" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="20" y="290" />
+                <mxPoint x="20" y="450" />
+              </Array>
+              <mxPoint x="-30" y="510" as="sourcePoint" />
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC6" label="&lt;div&gt;HTTP/S&lt;br&gt;Private&lt;br&gt;Endpoints&lt;br&gt;&lt;/div&gt;" threat="FC7_T1,FC7_T3,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-20">
+          <mxCell style="html=1;pointerEvents=1;labelBackgroundColor=#ffffff;fillColor=#5A30B5;verticalLabelPosition=bottom;fontColor=#232F3E;align=center;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.endpoint;verticalAlign=top;dashed=0;gradientColor=none;strokeColor=none;outlineConnect=0" parent="1" vertex="1">
+            <mxGeometry x="290" y="530" width="40" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="FC1,FC2,FC3,FC6,FC7" label="" threat="FC7_T1,FC7_T3,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-21">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="7wCJVVn6IqJLDXxpWDTT-20" target="khpNWXbXB9I4wqvf5BjM-3" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="470" y="450" as="targetPoint" />
+              <mxPoint x="240" y="870" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="" label="connect" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-22">
+          <mxCell style="fontStyle=0;fillColor=none;dashed=1;verticalAlign=middle;fontColor=#000000;whiteSpace=wrap;strokeColor=none" parent="1" vertex="1">
+            <mxGeometry x="-70" y="270" width="60" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="" label="&lt;div&gt;Azure AD&lt;br&gt;Guests Users&lt;/div&gt;" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-23">
+          <mxCell style="html=1;pointerEvents=1;verticalLabelPosition=bottom;fontColor=#232F3E;align=center;fontSize=12;fontStyle=0;aspect=fixed;verticalAlign=top;fillColor=#232F3E;dashed=0;shape=mxgraph.aws4.users;gradientColor=none;strokeColor=none;outlineConnect=0" parent="1" vertex="1">
+            <mxGeometry x="-340" y="190" width="40" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="" label="&lt;div&gt;Azure AD&lt;br&gt;Users&lt;br&gt;&lt;/div&gt;" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-24">
+          <mxCell style="html=1;pointerEvents=1;verticalLabelPosition=bottom;fontColor=#232F3E;align=center;fontSize=12;fontStyle=0;aspect=fixed;verticalAlign=top;fillColor=#232F3E;dashed=0;shape=mxgraph.aws4.users;gradientColor=none;strokeColor=none;outlineConnect=0" parent="1" vertex="1">
+            <mxGeometry x="-340" y="280" width="40" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Managed Identity&lt;br&gt;Service Principal" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" feature_class="" id="7wCJVVn6IqJLDXxpWDTT-25">
+          <mxCell style="html=1;align=center;fontSize=12;image=img/lib/mscae/Managed_Identities.svg;aspect=fixed;points=[];image;sketch=0" parent="1" vertex="1">
+            <mxGeometry x="-340" y="370" width="40" height="50" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" threat="" feature_class="" id="zWG-i_AXv9CZwfDGfDFG-1">
+          <mxCell style="html=1;exitY=0;exitDy=0;jettySize=auto;rounded=1;labelBackgroundColor=default;orthogonalLoop=1;dashed=1;endFill=1;edgeStyle=orthogonalEdgeStyle;exitDx=0;endArrow=block;exitX=0.5" parent="1" source="Qy1xeNws0UDpEFEuDrA6-4" target="Qy1xeNws0UDpEFEuDrA6-3" edge="1">
+            <mxGeometry x="-0.7143" y="-25" relative="1" as="geometry">
+              <mxPoint as="offset" />
+              <mxPoint x="-207.33333333333348" y="700" as="sourcePoint" />
+              <mxPoint x="-207.33333333333348" y="630" as="targetPoint" />
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC7" label="manage" threat="FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC4_T27,FC5_T28,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-41">
+          <mxCell style="html=1;jettySize=auto;rounded=1;strokeColor=#000000;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="7wCJVVn6IqJLDXxpWDTT-4" target="7wCJVVn6IqJLDXxpWDTT-10" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="-300" y="560" as="sourcePoint" />
+              <mxPoint x="-110" y="560" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="230" y="290" />
+                <mxPoint x="230" y="290" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="&lt;div style=&quot;font-size: 10px&quot;&gt;IAM permissions&lt;br&gt;Azure Policy&lt;br&gt;Conditional Access&lt;/div&gt;" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-44">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="-1" y="-30" relative="1" as="geometry">
+              <mxPoint x="-150" y="280" as="sourcePoint" />
+              <mxPoint x="-150" y="300" as="targetPoint" />
+              <mxPoint x="30" y="-30" as="offset" />
+              <Array as="points">
+                <mxPoint x="-150" y="290" />
+                <mxPoint x="-150" y="290" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC7" label="" threat="FC7_T1,FC7_T2,FC1_T4,FC2_T5,FC1_T11" id="7wCJVVn6IqJLDXxpWDTT-45">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="7wCJVVn6IqJLDXxpWDTT-22" target="7wCJVVn6IqJLDXxpWDTT-4" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="130" y="330" as="targetPoint" />
+              <mxPoint x="-80" y="430" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC7" label="&lt;div style=&quot;font-size: 10px&quot;&gt;SAS policies, xor&lt;/div&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;SAS token permissions&lt;/div&gt;" threat="FC7_T1,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC4_T27,FC5_T28,FC4_T31,FC4_T32" id="1O01itK06eqGjHxYCvzk-11">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="-1" y="-25" relative="1" as="geometry">
+              <mxPoint x="-150" y="600" as="sourcePoint" />
+              <mxPoint x="-150" y="620" as="targetPoint" />
+              <mxPoint x="25" y="-25" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC6" label="" threat="FC2_T5,FC1_T26,FC1_T29" id="1O01itK06eqGjHxYCvzk-15">
+          <mxCell style="html=1;exitDy=0;jettySize=auto;rounded=1;orthogonalLoop=1;exitPerimeter=0;endFill=1;exitDx=0;exitX=0.875;edgeStyle=orthogonalEdgeStyle;exitY=0.5;endArrow=block" parent="1" source="deXMCvcymIMytJS5L04O-1" edge="1" target="Y7Q4RMsMM1sopYpJf5bS-13">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="90" y="450" as="targetPoint" />
+              <mxPoint x="80" y="660" as="sourcePoint" />
+              <Array as="points">
+                <mxPoint x="-100" y="480" />
+                <mxPoint x="-100" y="450" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="&lt;div style=&quot;font-size: 10px&quot;&gt;Storage Account&lt;br&gt; Firewall&lt;/div&gt;" threat="FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="1O01itK06eqGjHxYCvzk-17">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="1" y="-32" relative="1" as="geometry">
+              <mxPoint x="260" y="440" as="sourcePoint" />
+              <mxPoint x="260" y="460" as="targetPoint" />
+              <mxPoint x="2" y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="&lt;div style=&quot;font-size: 10px&quot;&gt;VNET association&lt;br&gt;VNET security&lt;/div&gt;" threat="FC7_T1,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="1O01itK06eqGjHxYCvzk-18">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="-1" y="-28" relative="1" as="geometry">
+              <mxPoint x="260" y="540" as="sourcePoint" />
+              <mxPoint x="260" y="560" as="targetPoint" />
+              <mxPoint x="8" y="-20" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="&lt;div style=&quot;font-size: 10px&quot;&gt;ACL on Filesystem, File Share,&lt;/div&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;Queue, or Table&lt;/div&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;(restrict at container,&lt;br&gt;directory or file-level)&lt;/div&gt;" threat="FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="1O01itK06eqGjHxYCvzk-13">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="-1" y="-30" relative="1" as="geometry">
+              <mxPoint x="-80" y="440" as="sourcePoint" />
+              <mxPoint x="-80" y="460" as="targetPoint" />
+              <mxPoint x="30" y="-30" as="offset" />
+              <Array as="points">
+                <mxPoint x="-80" y="440.5" />
+                <mxPoint x="-80" y="440.5" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC7" label="" threat="FC7_T1,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC4_T27,FC5_T28,FC4_T31,FC4_T32" id="Y7Q4RMsMM1sopYpJf5bS-4">
+          <mxCell style="exitX=1.007;html=1;exitDy=0;jettySize=auto;rounded=1;exitY=0.555;orthogonalLoop=1;exitPerimeter=0;endFill=1;exitDx=0;edgeStyle=orthogonalEdgeStyle;endArrow=block" parent="1" source="Qy1xeNws0UDpEFEuDrA6-3" target="Y7Q4RMsMM1sopYpJf5bS-13" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="160" y="460" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="-60" y="610" />
+                <mxPoint x="-60" y="450" />
+              </Array>
+              <mxPoint x="-184.66999999999985" y="610" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="" threat="FC7_T1,FC7_T3,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="Y7Q4RMsMM1sopYpJf5bS-7">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;startArrow=none;endArrow=block" parent="1" source="Y7Q4RMsMM1sopYpJf5bS-13" target="7wCJVVn6IqJLDXxpWDTT-17" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="160" y="460" as="targetPoint" />
+              <Array as="points" />
+              <mxPoint x="-174.66999999999985" y="620" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC2,FC3,FC7" label="&lt;div style=&quot;font-size: 10px&quot;&gt;&lt;/div&gt;Forbide use Storage Account&lt;br&gt;Access Key " threat="FC7_T1,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="Y7Q4RMsMM1sopYpJf5bS-5">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="1" y="14" relative="1" as="geometry">
+              <mxPoint x="-80" y="600" as="sourcePoint" />
+              <mxPoint x="-80" y="730" as="targetPoint" />
+              <mxPoint x="-4" y="10" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC1,FC2,FC6" label="&lt;div style=&quot;font-size: 10px&quot;&gt;Anonymous access&lt;/div&gt;&lt;div style=&quot;font-size: 10px&quot;&gt;enabled&lt;br&gt;(SA Level)&lt;/div&gt;" threat="FC2_T5,FC2_T22,FC1_T26,FC1_T29" id="1O01itK06eqGjHxYCvzk-12">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="1" y="36" relative="1" as="geometry">
+              <mxPoint x="-140" y="470" as="sourcePoint" />
+              <mxPoint x="-140" y="490" as="targetPoint" />
+              <mxPoint x="-6" y="20" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC10" label="connect" threat="FC7_T1,FC7_T3,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T23,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="Y7Q4RMsMM1sopYpJf5bS-13">
+          <mxCell style="fontStyle=0;fillColor=none;dashed=1;verticalAlign=middle;fontColor=#000000;whiteSpace=wrap;strokeColor=none" parent="1" vertex="1">
+            <mxGeometry x="70" y="440" width="60" height="20" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" feature_class="FC2,FC3,FC7" threat="FC7_T1,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" id="Y7Q4RMsMM1sopYpJf5bS-14">
+          <mxCell style="orthogonalLoop=1;html=1;rounded=1;jettySize=auto;endArrow=none;endFill=1;edgeStyle=orthogonalEdgeStyle" parent="1" source="Qy1xeNws0UDpEFEuDrA6-4" target="Y7Q4RMsMM1sopYpJf5bS-13" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="291.0000000000002" y="450" as="targetPoint" />
+              <Array as="points">
+                <mxPoint x="-60" y="720" />
+                <mxPoint x="-60" y="450" />
+              </Array>
+              <mxPoint x="-184.66999999999985" y="720" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="derive" feature_class="FC7" threat="FC7_T1,FC7_T2" id="m7Iv75XXmZdgudWB3Z15-1">
+          <mxCell style="html=1;jettySize=auto;rounded=1;orthogonalLoop=1;endFill=1;edgeStyle=orthogonalEdgeStyle;endArrow=block;dashed=1;" parent="1" source="Qy1xeNws0UDpEFEuDrA6-4" target="Qy1xeNws0UDpEFEuDrA6-3" edge="1">
+            <mxGeometry x="-0.4571" y="-9" relative="1" as="geometry">
+              <mxPoint as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Access Keys&lt;div&gt;(up to 2 per Storage Account)&lt;/div&gt;" threat="FC7_T1,FC7_T2,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC4_T27,FC5_T28,FC2_T30,FC4_T31,FC4_T32" feature_class="" id="Qy1xeNws0UDpEFEuDrA6-4">
+          <mxCell style="html=1;image=img/lib/active_directory/key.svg;perimeter=ellipsePerimeter;align=center;aspect=fixed;spacingTop=3;shadow=0;image;dashed=0" parent="1" vertex="1">
+            <mxGeometry x="-230" y="700" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="FC10" label="Any Subscription / Any Tenant" threat="FC9_T13,FC1_T23" id="Qy1xeNws0UDpEFEuDrA6-9">
+          <mxCell style="whiteSpace=wrap;html=1;grIcon=mxgraph.aws4.group_region;shape=mxgraph.aws4.group;fontColor=#147EBA;fontSize=12;fontStyle=0;fillColor=none;outlineConnect=0;align=left;verticalAlign=top;dashed=0;strokeColor=#147EBA;gradientColor=none;points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];spacingLeft=30" parent="1" vertex="1">
+            <mxGeometry x="600" y="230" width="140" height="560" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="FC9" label="&lt;div&gt;Prevent cross&lt;br&gt;tenant object&lt;br&gt;replication&lt;br&gt;&lt;/div&gt;" threat="FC9_T13" id="Qy1xeNws0UDpEFEuDrA6-11">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="-1" y="54" relative="1" as="geometry">
+              <mxPoint x="510" y="390" as="sourcePoint" />
+              <mxPoint x="510" y="410" as="targetPoint" />
+              <mxPoint x="-4" y="-20" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Log Analytics&lt;br&gt;workspace" threat="FC8_T10" feature_class="" id="0LCSYkjx8e5zjCw90O-2-4">
+          <mxCell style="html=1;align=center;fontSize=12;aspect=fixed;points=[];image=img/lib/mscae/Log_Analytics_Workspaces.svg;image;sketch=0" parent="1" vertex="1">
+            <mxGeometry x="200" y="110" width="50" height="50" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Event Hub" threat="FC8_T10" feature_class="" id="0LCSYkjx8e5zjCw90O-2-5">
+          <mxCell style="html=1;align=center;image=img/lib/mscae/Dedicated_Event_Hub.svg;fontSize=12;aspect=fixed;points=[];image;sketch=0" parent="1" vertex="1">
+            <mxGeometry x="280" y="110" width="50" height="50" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Blob/Directory" threat="FC8_T10" feature_class="" id="0LCSYkjx8e5zjCw90O-2-6">
+          <mxCell style="html=1;align=center;fontSize=12;aspect=fixed;points=[];image;image=img/lib/azure2/general/Blob_Block.svg" parent="1" vertex="1">
+            <mxGeometry x="360" y="120" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Partner solution" threat="FC8_T10" feature_class="" id="0LCSYkjx8e5zjCw90O-2-7">
+          <mxCell style="strokeColor=none;html=1;pointerEvents=1;verticalLabelPosition=bottom;fillColor=#282828;align=center;verticalAlign=top;shape=mxgraph.cisco_safe.security_icons.siem;sketch=0" parent="1" vertex="1">
+            <mxGeometry x="450" y="110" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="FC6" label="HTTP/S&lt;br&gt;Endpoints" threat="FC7_T1,FC7_T3,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="7wCJVVn6IqJLDXxpWDTT-17">
+          <mxCell style="html=1;pointerEvents=1;labelBackgroundColor=#ffffff;fillColor=#5A30B5;verticalLabelPosition=bottom;fontColor=#232F3E;align=center;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.endpoint;verticalAlign=top;dashed=0;gradientColor=none;strokeColor=none;outlineConnect=0" parent="1" vertex="1">
+            <mxGeometry x="290" y="430" width="40" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="" feature_class="FC1,FC2,FC3,FC6,FC7" threat="FC7_T1,FC7_T3,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="Y7Q4RMsMM1sopYpJf5bS-3">
+          <mxCell style="html=1;edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;endFill=1;endArrow=block;rounded=1;jettySize=auto" parent="1" edge="1">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="371" y="450" as="targetPoint" />
+              <mxPoint x="331" y="450" as="sourcePoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="&lt;span style=&quot;font-size: 9pt; line-height: 107%; font-family: Helvetica&quot;&gt;Anonymous&lt;/span&gt;&lt;br&gt;Access" feature_class="FC6" threat="FC2_T5,FC2_T22,FC1_T26,FC1_T29" id="deXMCvcymIMytJS5L04O-1">
+          <mxCell style="html=1;verticalLabelPosition=bottom;align=center;labelPosition=center;verticalAlign=top;whiteSpace=wrap;shape=cloud" parent="1" vertex="1">
+            <mxGeometry x="-230" y="460" width="60" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Storage Account" threat="FC9_T13" feature_class="" id="QMkIZDO7Pbn6Bd9JF3Vb-1">
+          <mxCell style="html=1;pointerEvents=1;verticalLabelPosition=bottom;shape=mxgraph.azure.storage;align=center;verticalAlign=top;fillColor=#00BEF2;strokeColor=none" parent="1" vertex="1">
+            <mxGeometry x="640" y="380" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="data share&lt;br&gt;via invitation" feature_class="FC10" threat="FC1_T23" id="33CyXBxVPpSgv_aaOKo2-2">
+          <mxCell style="html=1;entryY=0.5;entryDx=0;exitDy=0;entryPerimeter=0;jettySize=auto;rounded=1;entryDy=0;orthogonalLoop=1;exitPerimeter=0;endFill=1;edgeStyle=orthogonalEdgeStyle;exitDx=0;exitY=0.5;endArrow=block;entryX=0;exitX=1" parent="1" source="J7GUKvc5OmkMldF1lemn-1" target="33CyXBxVPpSgv_aaOKo2-4" edge="1">
+            <mxGeometry x="0.0476" relative="1" as="geometry">
+              <Array as="points" />
+              <mxPoint as="offset" />
+              <mxPoint x="500" y="530" as="sourcePoint" />
+              <mxPoint x="630" y="720" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC10" label="&lt;div&gt;Caller&lt;br&gt;IAM permissions&lt;/div&gt;" threat="FC1_T23" id="33CyXBxVPpSgv_aaOKo2-3">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="-1" y="36" relative="1" as="geometry">
+              <mxPoint x="510" y="710" as="sourcePoint" />
+              <mxPoint x="510" y="730" as="targetPoint" />
+              <mxPoint x="-6" y="-20" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="Data Share" threat="FC1_T23" feature_class="FC10" id="33CyXBxVPpSgv_aaOKo2-4">
+          <mxCell style="html=1;pointerEvents=1;verticalLabelPosition=bottom;shape=mxgraph.azure.storage;align=center;verticalAlign=top;fillColor=#00BEF2;strokeColor=none" parent="1" vertex="1">
+            <mxGeometry x="660" y="700" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="FC1,FC2,FC6" label="&lt;div style=&quot;font-size: 10px&quot;&gt;CORS&lt;br&gt;(per endpoint)&lt;/div&gt;" threat="FC2_T5,FC2_T22,FC1_T26,FC1_T29" id="0kO103BJIno3YMpxgyow-2">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="1" y="-22" relative="1" as="geometry">
+              <mxPoint x="140" y="440" as="sourcePoint" />
+              <mxPoint x="140" y="460" as="targetPoint" />
+              <mxPoint x="12" y="20" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object label="&lt;div style=&quot;font-size: 8px&quot;&gt;&lt;div&gt;&lt;span&gt; dfs - {storageaccount}.dfs.core.windows.net&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt; web - {storageaccount}.z13.web.core.windows.net&lt;/div&gt;&lt;div&gt; blob - {storageaccount}.blob.core.windows.net&lt;/div&gt;&lt;div&gt; queue - {storageaccount}.queue.core.windows.net&lt;/div&gt;&lt;div&gt;&lt;span&gt; table&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span&gt;-&lt;/span&gt;&lt;span&gt; &lt;/span&gt;&lt;span&gt;{storageaccount}.table.core.windows.net&lt;/span&gt;&lt;/div&gt;&lt;div&gt; file - {storageaccount}.file.core.windows.net&lt;/div&gt;&lt;/div&gt;" feature_class="FC6,FC9,FC10" threat="FC7_T1,FC7_T2,FC7_T3,FC1_T4,FC2_T5,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC8_T10,FC1_T11,FC2_T12,FC1_T14,FC3_T15,FC3_T16,FC3_T17,FC3_T18,FC3_T19,FC3_T20,FC3_T21,FC2_T22,FC1_T23,FC1_T26,FC4_T27,FC5_T28,FC1_T29,FC2_T30,FC4_T31,FC4_T32" id="TIxKn49f12_awS70TTe9-1">
+          <mxCell style="strokeWidth=1;html=1;whiteSpace=wrap;strokeColor=#999999;spacing=10;spacingLeft=10;shape=mxgraph.bootstrap.rrect;align=left;fontSize=14;shadow=0;rSize=5;fillColor=#FFFFFF;fontColor=#6C767D;verticalAlign=middle;dashed=0" parent="1" vertex="1">
+            <mxGeometry x="120" y="360" width="220" height="70" as="geometry" />
+          </mxCell>
+        </object>
+        <object label="Shared Access Signatures&lt;div&gt;(SAS token)&lt;/div&gt;" threat="FC7_T1,FC7_T2,FC7_T3,FC2_T6,FC2_T7,FC2_T8,FC2_T9,FC1_T11,FC2_T12,FC4_T27,FC5_T28,FC4_T31,FC4_T32" feature_class="" id="Qy1xeNws0UDpEFEuDrA6-3">
+          <mxCell style="html=1;image=img/lib/active_directory/key.svg;perimeter=ellipsePerimeter;align=center;aspect=fixed;spacingTop=3;shadow=0;image;dashed=0" parent="1" vertex="1">
+            <mxGeometry x="-230" y="590" width="50" height="40" as="geometry" />
+          </mxCell>
+        </object>
+        <object feature_class="FC10" label="&lt;div&gt;Invitation&lt;/div&gt;&lt;div&gt;accepted&amp;nbsp;&lt;/div&gt;" threat="FC1_T23" id="kTVcZwWhR2GMMDOhWw83-1">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="-1" y="22" relative="1" as="geometry">
+              <mxPoint x="620" y="710" as="sourcePoint" />
+              <mxPoint x="620" y="730" as="targetPoint" />
+              <mxPoint x="-12" y="-20" as="offset" />
+            </mxGeometry>
+          </mxCell>
+        </object>
+        <object feature_class="FC8" label="&lt;div style=&quot;font-size: 10px&quot;&gt;Caller&lt;br&gt;IAM perrmisions&lt;/div&gt;" threat="FC8_T10" id="kTVcZwWhR2GMMDOhWw83-3">
+          <mxCell style="html=1;strokeWidth=2;curved=1;endArrow=none;jettySize=auto;orthogonalLoop=1;edgeStyle=orthogonalEdgeStyle;strokeColor=#FF2212;fontColor=#FF2212;jumpSize=1;fontSize=10;endFill=0;jumpStyle=arc" parent="1" edge="1">
+            <mxGeometry x="1" y="41" relative="1" as="geometry">
+              <mxPoint x="395" y="240" as="sourcePoint" />
+              <mxPoint x="415" y="240" as="targetPoint" />
+              <mxPoint x="40" y="31" as="offset" />
+              <Array as="points">
+                <mxPoint x="395" y="240" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
