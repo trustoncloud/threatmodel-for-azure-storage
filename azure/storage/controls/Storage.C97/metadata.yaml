@@ -1,0 +1,21 @@
+id: Storage.C97
+objective: Storage.CO14
+coso: Assurance
+nist_csf: Detect
+effort: Medium
+description: 'Verify only authorized CORS trusted origins and corresponding settings
+  are configured (e.g., by using a custom Azure Policy on {"Microsoft.Storage/storageAccounts/blobServices/cors.allowedOrigins[*]":
+  ["https://myapp.contoso.com"]} in Audit mode).'
+testing: Create a storage account with untrusted CORS settings; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'cors_trusted_origins_detection'
+  file: 'cors_trusted_origins_detection.rego'
+  test: 'tests/cors_trusted_origins_detection_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - universal

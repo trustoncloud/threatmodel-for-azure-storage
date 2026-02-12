@@ -1,0 +1,29 @@
+﻿Control ID,Short Summary,Supported Modes,Wiz Built-in CCR Mapping (If Applicable)
+Storage.C9,Disable unauthorized public access.,,StorageAccount-005
+Storage.C11,Enforces blob versioning on required containers.,,StorageAccount-049
+Storage.C13,Mandates share snapshots for required file shares.,,N/A
+Storage.C18,Validates blob soft-delete is enabled for data recovery.,,StorageAccount-008
+Storage.C21,Validates container soft-delete is enabled for data recovery.,,StorageAccount-035
+Storage.C24,Hierarchical Namespace (HNS) Detection,"Allowlist, Universal",N/A
+Storage.C28,Storage Account Location Validation,"Allowlist, Universal",N/A
+Storage.C40,Default Network Access (Firewall),"Allowlist, Universal",StorageAccount-029
+Storage.C45,Authorized Private Endpoints,"Allowlist, Universal",N/A
+Storage.C49,Restricts cross-tenant replication to authorized accounts.,,StorageAccount-019
+Storage.C54,Verifies diagnostic logging to Log Analytics is configured.,,StorageAccount-030
+Storage.C59,Limits anonymous access to explicitly authorized containers.,,StorageAccount-013
+Storage.C65,Enforces authorized customer-managed keys.,,StorageAccount-007
+Storage.C74,Mandates authorized storage redundancy.,,StorageAccount-027
+Storage.C78,Authorized Azure Regions,"Allowlist, Denylist, Universal",N/A
+Storage.C81,Restricts authorized authentication methods.,"Allowlist, Universal",StorageAccount-043 (Partial)
+Storage.C86,Enforces file share soft-delete.,,StorageAccount-048
+Storage.C93,Disables unauthorized static websites.,,StorageAccount-046
+Storage.C97,CORS Trusted Origins & Methods,"Allowlist, Universal",N/A
+Storage.C102,Legacy SMB 2.1 Protocol Detection,"Allowlist, Denylist, Universal",StorageAccount-034 (Partial)
+Storage.C109,Resource Management Locks,"Allowlist, Universal",N/A
+Storage.C116,Restricts SFTP to authorized accounts.,,StorageAccount-036
+Storage.C123,SMB Security Protocol Settings,"Allowlist, Denylist, Universal","StorageAccount-037 (Partial), StorageAccount-038 (Partial)"
+Storage.C146,Blob Version-Level Immutability,"Allowlist, Universal",StorageAccount-047 (Partial)
+Storage.C152,Authorizes replication destination accounts.,,StorageAccount-045
+Storage.C157,Validates stored access policy permissions.,,StorageAccount-042 (Partial)
+Storage.C160,Enforce Data Lake ACLs by disabling Shared Key access with HNS enabled,"Allowlist, Universal",N/A
+Storage.C163,Authorizes SFTP local user permissions.,"Allowlist, Universal",N/A

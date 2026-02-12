@@ -1,0 +1,23 @@
+id: Storage.C102
+objective: Storage.CO8
+coso: Assurance
+nist_csf: Detect
+effort: Medium
+description: 'Verify only file shares that require NFS/SMB 2.1 have it enabled (e.g.,
+  by using a custom Azure Policy on {"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.protocolVersions[*]":
+  ["SMB2.1"]} in Audit mode).'
+testing: Modify an existing file share that does not require NFS/SMB 2.1 to use NFS/SMB
+  2.1; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'file_share_smb21_required'
+  file: 'file_share_smb21_required.rego'
+  test: 'tests/file_share_smb21_required_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - denylist
+    - universal
