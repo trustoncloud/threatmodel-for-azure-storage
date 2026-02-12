@@ -1,0 +1,22 @@
+id: Storage.C78
+objective: Storage.CO5
+coso: Assurance
+nist_csf: Detect
+effort: Medium
+description: 'Verify only the authorized storage account region is set for redundancy
+  (e.g., by using a custom Azure Policy with {"location": ["eastus","westeurope"]}
+  in Audit mode).'
+testing: Create a storage account with an unauthorized region; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'authorized_region_detection'
+  file: 'authorized_region_detection.rego'
+  test: 'tests/authorized_region_detection_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - denylist
+    - universal

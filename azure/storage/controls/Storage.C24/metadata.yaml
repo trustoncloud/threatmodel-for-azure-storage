@@ -1,0 +1,22 @@
+id: Storage.C24
+objective: Storage.CO21
+coso: Assurance
+nist_csf: Detect
+effort: Medium
+description: 'Verify only required storage accounts have the hierarchical namespace
+  (HNS) option enabled (e.g., by using a custom Azure Policy on {"isHnsEnabled": "true"}
+  in Audit mode).'
+testing: Create a non-required storage account with the hierarchical namespace (HNS)
+  option enabled; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'hns_enabled_detection'
+  file: 'hns_enabled_detection.rego'
+  test: 'tests/hns_enabled_detection_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - universal
