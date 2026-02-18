@@ -1,9 +1,11 @@
-id: Storage.C160
+﻿id: Storage.C160
 objective: Storage.CO7
 coso: Assurance
 nist_csf: Detect
 effort: Medium
-description: 'Verify Azure Data Lake Storage Gen2 functionality is enabled only where Access Control Lists (ACLs) on containers are authorized (e.g., by using a custom Azure Policy to detect storage accounts where \"Microsoft.Storage/storageAccounts/isHnsEnabled\" = true and \"Microsoft.Storage/storageAccounts/allowSharedKeyAccess\" = false, in Audit mode).'
+weighted_priority: Medium
+weighted_priority_score: 2
+description: 'Verify Azure Data Lake Storage Gen2 functionality is enabled only where Access Control Lists (ACLs) on containers are authorized (e.g., by using a custom Azure Policy to detect storage accounts where "Microsoft.Storage/storageAccounts/isHnsEnabled" = true and "Microsoft.Storage/storageAccounts/allowSharedKeyAccess" = false, in Audit mode).'
 testing: Enable Shared Key authorization (allowSharedKeyAccess = true) on an HNS-enabled storage account, or disable hierarchical namespace (isHnsEnabled = false) on a storage account; it should be detected.
 mitigates_threats: []
 assured_by: ''

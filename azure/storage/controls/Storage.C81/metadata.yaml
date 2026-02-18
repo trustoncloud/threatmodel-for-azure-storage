@@ -1,9 +1,11 @@
-id: Storage.C81
+﻿id: Storage.C81
 objective: Storage.CO4
 coso: Assurance
 nist_csf: Detect
 effort: Medium
-description: 'Verify Shared Key authorization is disabled (and optionally that OAuth is the default) for authorized storage accounts that host authorized blobs, file shares, queues, tables, and DFS (e.g., by using a custom Azure Policy to require \"Microsoft.Storage/storageAccounts/allowSharedKeyAccess\" = false and, optionally, \"Microsoft.Storage/storageAccounts/defaultToOAuthAuthentication\" = true in Audit mode).'
+weighted_priority: Medium
+weighted_priority_score: 2
+description: 'Verify Shared Key authorization is disabled (and optionally that OAuth is the default) for authorized storage accounts that host authorized blobs, file shares, queues, tables, and DFS (e.g., by using a custom Azure Policy to require "Microsoft.Storage/storageAccounts/allowSharedKeyAccess" = false and, optionally, "Microsoft.Storage/storageAccounts/defaultToOAuthAuthentication" = true in Audit mode).'
 testing: Configure a storage account with allowSharedKeyAccess enabled and/or defaultToOAuthAuthentication disabled; it should be detected.
 mitigates_threats: []
 assured_by: ''

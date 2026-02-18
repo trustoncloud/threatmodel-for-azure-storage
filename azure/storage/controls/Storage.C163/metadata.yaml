@@ -1,9 +1,11 @@
-id: Storage.C163
+﻿id: Storage.C163
 objective: Storage.CO4
 coso: Assurance
 nist_csf: Detect
 effort: Medium
-description: 'Verify local user functionality for SFTP is enabled only where local users, their permissions, and authentication methods are authorized (e.g., by using a custom Azure Policy to detect storage accounts where \"Microsoft.Storage/storageAccounts/localUsersEnabled\" = true and \"Microsoft.Storage/storageAccounts/isSftpEnabled\" = true, in Audit mode).'
+weighted_priority: Medium
+weighted_priority_score: 2
+description: 'Verify local user functionality for SFTP is enabled only where local users, their permissions, and authentication methods are authorized (e.g., by using a custom Azure Policy to detect storage accounts where "Microsoft.Storage/storageAccounts/localUsersEnabled" = true and "Microsoft.Storage/storageAccounts/isSftpEnabled" = true, in Audit mode).'
 testing: Enable local users in a hierarchical namespace with SFTP where local users are not authorized; it should be detected.
 mitigates_threats: []
 assured_by: ''

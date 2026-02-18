@@ -1,11 +1,11 @@
-id: Storage.C78
+﻿id: Storage.C78
 objective: Storage.CO5
 coso: Assurance
 nist_csf: Detect
 effort: Medium
-description: 'Verify only the authorized storage account region is set for redundancy
-  (e.g., by using a custom Azure Policy with {"location": ["eastus","westeurope"]}
-  in Audit mode).'
+weighted_priority: Very Low
+weighted_priority_score: 0
+description: 'Verify only the authorized storage account region is set for redundancy (e.g., by using a custom Azure Policy with {"location": ["eastus","westeurope"]} in Audit mode).'
 testing: Create a storage account with an unauthorized region; it should be detected.
 mitigates_threats: []
 assured_by: ''

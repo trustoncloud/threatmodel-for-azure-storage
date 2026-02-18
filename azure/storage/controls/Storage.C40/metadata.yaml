@@ -1,11 +1,11 @@
-id: Storage.C40
+﻿id: Storage.C40
 objective: Storage.CO9
 coso: Assurance
 nist_csf: Detect
 effort: Medium
-description: Verify only authorized private endpoints are configured on storage accounts
-  (e.g., by using the built-in Azure Policy "Storage accounts should use Private Link"
-  in Audit mode).
+weighted_priority: Very High
+weighted_priority_score: 4
+description: 'Verify only authorized private endpoints are configured on storage accounts (e.g., by using the built-in Azure Policy "Storage accounts should use Private Link" in Audit mode).'
 testing: Configure an unauthorized private endpoint on a storage account; it should
   be detected.
 mitigates_threats: []

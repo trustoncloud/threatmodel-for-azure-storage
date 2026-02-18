@@ -1,11 +1,11 @@
-id: Storage.C45
+﻿id: Storage.C45
 objective: Storage.CO9
 coso: Assurance
 nist_csf: Detect
 effort: Medium
-description: Verify only authorized IPs are permitted through each storage account
-  firewall (e.g., by using built-in Azure Policy "Storage accounts should restrict
-  network access" in Audit mode).
+weighted_priority: High
+weighted_priority_score: 3
+description: 'Verify only authorized IPs are permitted through each storage account firewall (e.g., by using built-in Azure Policy "Storage accounts should restrict network access" in Audit mode).'
 testing: Connect to a storage account from an unauthorized IP; it should be detected.
 mitigates_threats: []
 assured_by: ''
