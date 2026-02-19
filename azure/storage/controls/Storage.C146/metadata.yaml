@@ -1,0 +1,22 @@
+﻿id: Storage.C146
+objective: Storage.CO24
+coso: Assurance
+nist_csf: Detect
+effort: Low
+weighted_priority: High
+weighted_priority_score: 3
+description: 'Verify required storage container blobs have immutability policies enabled (e.g., by using the built-in Azure Policy "Immutable blob storage should be enabled" in Audit mode).'
+testing: Turn off immutability on a storage container blob that requires it to be
+  enabled; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'container_immutability_soft_delete_required'
+  file: 'container_immutability_soft_delete_required.rego'
+  test: 'tests/container_immutability_soft_delete_required_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - universal

@@ -1,0 +1,22 @@
+﻿id: Storage.C28
+objective: Storage.CO4
+coso: Assurance
+nist_csf: Detect
+effort: Low
+weighted_priority: Medium
+weighted_priority_score: 2
+description: 'Verify only storage accounts allowing SAS token authentication have it enabled (e.g., by using Azure built-in policy StorageAccountAllowSharedKeyAccess_Audit.json).'
+testing: Enable SAS token authentication on a storage account that should not allow
+  it; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'shared_key_access_enabled'
+  file: 'shared_key_access_enabled.rego'
+  test: 'tests/shared_key_access_enabled_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - universal

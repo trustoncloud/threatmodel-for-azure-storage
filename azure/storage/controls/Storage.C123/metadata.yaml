@@ -1,0 +1,22 @@
+﻿id: Storage.C123
+objective: Storage.CO8
+coso: Assurance
+nist_csf: Detect
+effort: Medium
+weighted_priority: Low
+weighted_priority_score: 1
+description: 'Verify required file shares'' security protocol settings are configured (e.g., by using a custom Azure Policy on {"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb": {"kerberosTicketEncryption":"AES256","channelEncryption":"Required"}} in Audit mode).'
+testing: Modify a required file share's security protocol settings; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'file_share_security_protocol_required'
+  file: 'file_share_security_protocol_required.rego'
+  test: 'tests/file_share_security_protocol_required_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - denylist
+    - universal

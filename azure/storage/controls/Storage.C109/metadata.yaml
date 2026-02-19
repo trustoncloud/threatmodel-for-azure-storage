@@ -1,0 +1,21 @@
+﻿id: Storage.C109
+objective: Storage.CO24
+coso: Assurance
+nist_csf: Detect
+effort: Medium
+weighted_priority: High
+weighted_priority_score: 3
+description: 'Verify required storage accounts have read-only and/or delete locks applied (e.g., by using built-in Azure Policy "Resource locks should be applied" in Audit mode).'
+testing: Remove a read-only or delete lock from a storage account; it should be detected.
+mitigates_threats: []
+assured_by: ''
+depends_on: ''
+retired: 'false'
+ccr:
+  name: 'storage_account_lock_required'
+  file: 'storage_account_lock_required.rego'
+  test: 'tests/storage_account_lock_required_test.rego'
+  implemented: true
+  modes:
+    - allowlist
+    - universal
