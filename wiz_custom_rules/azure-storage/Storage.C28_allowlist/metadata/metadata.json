@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C28 - shared_key_access_enabled (allowlist)",
+  "enabled": false,
+  "function_as_control": false,
+  "severity": "MEDIUM",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC28"
+    },
+    {
+      "key": "mode",
+      "value": "allowlist"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO4"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}

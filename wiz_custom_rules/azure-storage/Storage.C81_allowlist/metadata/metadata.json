@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C81 - shared_key_auth_detection (allowlist)",
+  "enabled": false,
+  "function_as_control": false,
+  "severity": "MEDIUM",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC81"
+    },
+    {
+      "key": "mode",
+      "value": "allowlist"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO4"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}

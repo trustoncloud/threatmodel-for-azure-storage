@@ -1,0 +1,329 @@
+{
+  "service": "azure-storage",
+  "csp": "azure",
+  "display_name": "Azure Storage",
+  "control_prefix": "Storage",
+  "generated_at": "2026-06-11T05:01:25Z",
+  "controls": [
+    {
+      "id": "Storage.C24",
+      "name": "hns_enabled_detection",
+      "description": "Verify only required storage accounts have the hierarchical namespace (HNS) option enabled (e.g., by using a custom Azure Policy on {\"isHnsEnabled\": \"true\"} in Audit mode).",
+      "severity": "LOW",
+      "objective": "Storage.CO21",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C28",
+      "name": "shared_key_access_enabled",
+      "description": "Verify only storage accounts allowing SAS token authentication have it enabled (e.g., by using Azure built-in policy StorageAccountAllowSharedKeyAccess_Audit.json).",
+      "severity": "MEDIUM",
+      "objective": "Storage.CO4",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C40",
+      "name": "private_endpoint_authorized",
+      "description": "Verify only authorized private endpoints are configured on storage accounts (e.g., by using the built-in Azure Policy \"Storage accounts should use Private Link\" in Audit mode).",
+      "severity": "CRITICAL",
+      "objective": "Storage.CO9",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_private_endpoint",
+        "azurerm_private_dns_zone"
+      ]
+    },
+    {
+      "id": "Storage.C45",
+      "name": "storage_firewall_restricted",
+      "description": "Verify only authorized IPs are permitted through each storage account firewall (e.g., by using built-in Azure Policy \"Storage accounts should restrict network access\" in Audit mode).",
+      "severity": "HIGH",
+      "objective": "Storage.CO9",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account",
+        "azurerm_storage_account_network_rules"
+      ]
+    },
+    {
+      "id": "Storage.C78",
+      "name": "authorized_region_detection",
+      "description": "Verify only the authorized storage account region is set for redundancy (e.g., by using a custom Azure Policy with {\"location\": [\"eastus\",\"westeurope\"]} in Audit mode).",
+      "severity": "INFORMATIONAL",
+      "objective": "Storage.CO5",
+      "modes": [
+        "allowlist",
+        "denylist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C81",
+      "name": "shared_key_auth_detection",
+      "description": "Verify Shared Key authorization is disabled (and optionally that OAuth is the default) for authorized storage accounts that host authorized blobs, file shares, queues, tables, and DFS (e.g., by using a custom Azure Policy to require \"Microsoft.Storage/storageAccounts/allowSharedKeyAccess\" = false and, optionally, \"Microsoft.Storage/storageAccounts/defaultToOAuthAuthentication\" = true in Audit mode).",
+      "severity": "MEDIUM",
+      "objective": "Storage.CO4",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C97",
+      "name": "cors_trusted_origins_detection",
+      "description": "Verify only authorized CORS trusted origins and corresponding settings are configured (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/blobServices/cors.allowedOrigins[*]\": [\"https://myapp.contoso.com\"]} in Audit mode).",
+      "severity": "MEDIUM",
+      "objective": "Storage.CO14",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C102",
+      "name": "file_share_smb21_required",
+      "description": "Verify only file shares that require NFS/SMB 2.1 have it enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.protocolVersions[*]\": [\"SMB2.1\"]} in Audit mode).",
+      "severity": "MEDIUM",
+      "objective": "Storage.CO8",
+      "modes": [
+        "allowlist",
+        "denylist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C109",
+      "name": "storage_account_lock_required",
+      "description": "Verify required storage accounts have read-only and/or delete locks applied (e.g., by using built-in Azure Policy \"Resource locks should be applied\" in Audit mode).",
+      "severity": "HIGH",
+      "objective": "Storage.CO24",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account",
+        "azurerm_management_lock"
+      ]
+    },
+    {
+      "id": "Storage.C123",
+      "name": "file_share_security_protocol_required",
+      "description": "Verify required file shares' security protocol settings are configured (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb\": {\"kerberosTicketEncryption\":\"AES256\",\"channelEncryption\":\"Required\"}} in Audit mode).",
+      "severity": "LOW",
+      "objective": "Storage.CO8",
+      "modes": [
+        "allowlist",
+        "denylist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C146",
+      "name": "container_immutability_required",
+      "description": "Verify required storage container blobs have immutability policies enabled (e.g., by using the built-in Azure Policy \"Immutable blob storage should be enabled\" in Audit mode).",
+      "severity": "HIGH",
+      "objective": "Storage.CO24",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts/blobServices/containers"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_container",
+        "azurerm_storage_container_immutability_policy"
+      ]
+    },
+    {
+      "id": "Storage.C160",
+      "name": "datalake_acl_security",
+      "description": "Verify Azure Data Lake Storage Gen2 functionality is enabled only where Access Control Lists (ACLs) on containers are authorized (e.g., by using a custom Azure Policy to detect storage accounts where \"Microsoft.Storage/storageAccounts/isHnsEnabled\" = true and \"Microsoft.Storage/storageAccounts/allowSharedKeyAccess\" = false, in Audit mode).",
+      "severity": "MEDIUM",
+      "objective": "Storage.CO7",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    },
+    {
+      "id": "Storage.C163",
+      "name": "sftp_local_user_detection",
+      "description": "Verify local user functionality for SFTP is enabled only where local users, their permissions, and authentication methods are authorized (e.g., by using a custom Azure Policy to detect storage accounts where \"Microsoft.Storage/storageAccounts/localUsersEnabled\" = true and \"Microsoft.Storage/storageAccounts/isSftpEnabled\" = true, in Audit mode).",
+      "severity": "MEDIUM",
+      "objective": "Storage.CO4",
+      "modes": [
+        "allowlist",
+        "universal"
+      ],
+      "enabled_modes": [
+        "universal"
+      ],
+      "matchers": {
+        "cloud": true,
+        "terraform": true
+      },
+      "target_native_types": [
+        "Microsoft.Storage/storageAccounts"
+      ],
+      "tf_resource_types": [
+        "azurerm_storage_account"
+      ]
+    }
+  ],
+  "version": "v0.2.0"
+}

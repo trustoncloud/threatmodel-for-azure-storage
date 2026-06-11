@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C160 - datalake_acl_security (allowlist)",
+  "enabled": false,
+  "function_as_control": false,
+  "severity": "MEDIUM",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC160"
+    },
+    {
+      "key": "mode",
+      "value": "allowlist"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO7"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}

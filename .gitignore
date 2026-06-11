@@ -1,0 +1,20 @@
+.vscode/
+*.zip
+__pycache__/
+*.pyc
+settings.local.json
+
+# Claude Code agent artifacts (per-agent worktrees, transcripts, local state)
+.claude/
+wiz_deploy/Cloud_Configuration_Rules/
+release/
+
+# Terraform working artifacts (keep .terraform.lock.hcl and *.tfvars.example tracked)
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfplan
+terraform.tfvars
+*.auto.tfvars
+.terraform.lock.hcl

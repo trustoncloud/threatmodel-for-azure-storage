@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C45 - storage_firewall_restricted (allowlist)",
+  "enabled": false,
+  "function_as_control": false,
+  "severity": "HIGH",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC45"
+    },
+    {
+      "key": "mode",
+      "value": "allowlist"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO9"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}
