@@ -3,7 +3,7 @@
   "csp": "azure",
   "display_name": "Azure Storage",
   "control_prefix": "Storage",
-  "generated_at": "2026-06-11T05:01:25Z",
+  "generated_at": "2026-06-11T10:27:53Z",
   "controls": [
     {
       "id": "Storage.C24",

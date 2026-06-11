@@ -75,19 +75,22 @@ Each rule targets the relevant resource type:
 ## Package layout
 
 ```
-├── wiz_custom_rules/
-│   ├── azure-storage/                      The deployable rules (29 folders, one per control+mode)
-│   │   └── Storage.C<n>_<mode>/
-│   │       ├── cloud/<rule>.rego           Cloud matcher (runtime)
-│   │       ├── terraform/<rule>.rego       Terraform matcher (IaC)
-│   │       └── metadata/                   Name, severity, native types, tags, description, remediation
-│   ├── azure-storage.manifest.json         Catalog of all 13 controls in one JSON
-│   └── Azure Storage Controls and Wiz Mapping.csv
-├── iac_fixtures/                           Sample .tf files for testing the Terraform matchers
-│   └── Storage.C<n>/test_<mode>_{pass,fail}.tf
-└── deploy/                                 Terraform configuration that deploys the rules
-    ├── main.tf  providers.tf  versions.tf
+├── wiz_custom_rules/                       The deployable rules (29 folders, one per control+mode)
+│   └── Storage.C<n>_<mode>/
+│       ├── cloud/<rule>.rego               Cloud matcher (runtime)
+│       ├── terraform/<rule>.rego           Terraform matcher (IaC)
+│       └── metadata/                       Name, severity, native types, tags, description, remediation
+└── wiz_deployment/                         Everything needed to deploy and test the rules
+    ├── README.md                           This guide
+    ├── main.tf  providers.tf  versions.tf  Terraform configuration that deploys the rules
+    ├── azure-storage.manifest.json         Catalog of all 13 controls in one JSON
+    ├── Azure Storage Controls and Wiz Mapping.csv
+    └── terraform_test_samples/             Sample .tf files for testing the Terraform matchers
+        └── Storage.C<n>/test_<mode>_{pass,fail}.tf
 ```
+
+Keep `wiz_custom_rules/` to rule folders only: the Wiz Terraform module treats
+every entry in that folder as a rule.
 
 The manifest (`azure-storage.manifest.json`) is the quick reference: every
 control's id, name, description, severity, modes, matchers, and target types
@@ -120,10 +123,10 @@ export WIZ_CLIENT_SECRET=<your_wiz_client_secret>
 PowerShell equivalent: `$env:WIZ_URL = "..."` and so on. For unattended use,
 source the values from your secrets manager rather than typing them inline.
 
-### 3. Apply from the deploy folder
+### 3. Apply from the wiz_deployment folder
 
 ```bash
-cd deploy
+cd wiz_deployment
 terraform init
 terraform plan      # review: 29 rules to create
 terraform apply
@@ -187,10 +190,10 @@ resource. To exclude a mode from deployment entirely, delete its
 Both matchers can be exercised directly in the Wiz rule editor:
 
 - **Terraform matchers**: open a rule, choose Upload IaC File, and upload a
-  fixture from the `iac_fixtures/` folder at the repository root. Every
+  sample from `wiz_deployment/terraform_test_samples/`. Every
   `test_<mode>_fail.tf` returns a fail result (the Wiz test output shows only
-  the first failing resource, even when a fixture contains several); every
-  `test_<mode>_pass.tf` returns pass. The fixtures double as working examples
+  the first failing resource, even when a sample contains several); every
+  `test_<mode>_pass.tf` returns pass. The samples double as working examples
   of compliant and non-compliant Terraform.
 - **Cloud matchers**: use Run Test in the rule editor against a resource JSON,
   or simply review the findings of the first scheduled scan.
