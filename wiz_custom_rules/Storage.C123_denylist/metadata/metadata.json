@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C123 - file_share_security_protocol_required (denylist)",
+  "enabled": false,
+  "function_as_control": false,
+  "severity": "LOW",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC123"
+    },
+    {
+      "key": "mode",
+      "value": "denylist"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO8"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}

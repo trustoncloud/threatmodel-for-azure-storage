@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C97 - cors_trusted_origins_detection (allowlist)",
+  "enabled": false,
+  "function_as_control": false,
+  "severity": "MEDIUM",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC97"
+    },
+    {
+      "key": "mode",
+      "value": "allowlist"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO14"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C40 - private_endpoint_authorized (universal)",
+  "enabled": true,
+  "function_as_control": true,
+  "severity": "CRITICAL",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC40"
+    },
+    {
+      "key": "mode",
+      "value": "universal"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO9"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}
