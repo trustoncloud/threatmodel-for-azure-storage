@@ -1,0 +1,47 @@
+title: Azure Storage C101 - Azure Files NFS/SMB 2.1 Configuration Change
+id: b49e5494-77d4-479d-aaee-d008b84d9cbd
+status: experimental
+description: Monitor the creation or update of Azure Files NFS/SMB 2.1 and corresponding settings (e.g., using activity logs on properties.supportsHttpsTrafficOnly scope "supportsHttpsTrafficOnly").
+testing: Modify or create a file share that does not require NFS/SMB 2.1 to use NFS/SMB 2.1; it should be detected.
+notes: |
+    Fires on file-service, file-share, or storage-account write operations that set SMB 2.1, NFS, or `supportsHttpsTrafficOnly`, unless the `ResourceId` is in the authorized file-service scope (`%authorized_file_service_paths_c101%`) or storage-account scope (`%authorized_storage_account_paths_c101%`).
+references:
+    - https://learn.microsoft.com/en-us/azure/storage/files/storage-files-networking-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-schema
+    - https://learn.microsoft.com/en-us/rest/api/storagerp/file-services/set-service-properties
+    - https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares/create
+author: TrustOnCloud
+date: 2026-03-08
+modified: 2026-03-29
+tags:
+    - trustoncloud.azure.storage
+    - trustoncloud.control.storage.c101
+logsource:
+    product: azure
+    service: activity
+detection:
+    selection_operation_file_settings:
+        OperationNameValue|contains:
+            - 'MICROSOFT.STORAGE/STORAGEACCOUNTS/FILESERVICES/WRITE'
+            - 'MICROSOFT.STORAGE/STORAGEACCOUNTS/FILESERVICES/SHARES/WRITE'
+    selection_operation_storage_account:
+        OperationNameValue|contains: 'MICROSOFT.STORAGE/STORAGEACCOUNTS/WRITE'
+    selection_file_setting_smb21:
+        Properties|contains: 'SMB2.1'
+    selection_file_setting_nfs:
+        Properties|re: '"enabledProtocols"\s*:\s*"NFS"'
+    selection_storage_setting_https:
+        Properties|contains: 'supportsHttpsTrafficOnly'
+    filter_authorized_file_service_scope:
+        ResourceId|contains|expand: '%authorized_file_service_paths_c101%'
+    filter_authorized_storage_account_scope:
+        ResourceId|contains|expand: '%authorized_storage_account_paths_c101%'
+    selection_status:
+        ActivityStatusValue:
+            - Success
+            - Failure
+            - Failed
+    condition: selection_status and ((selection_operation_file_settings and 1 of selection_file_setting_* and not filter_authorized_file_service_scope) or (selection_operation_storage_account and selection_storage_setting_https and not filter_authorized_storage_account_scope))
+falsepositives:
+    - Expected protocol changes on file shares or storage accounts that were not yet allowlisted.
+level: low
