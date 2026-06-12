@@ -1,0 +1,32 @@
+title: Azure Storage C183 - User Delegation Key Revocation
+id: 82ecd6d0-4589-4d39-8cc7-80a3e8be5b86
+status: experimental
+description: Monitor for user delegation key operations on blob storage (generation and revocation), e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action" or "Microsoft.Storage/storageAccounts/revokeUserDelegationKeys/action" in Audit mode.
+testing: Perform a user delegation key operation on blob storage; it should be detected.
+notes: |
+    Detects a revokeUserDelegationKeys action unless the caller is in `%authorized_callers_c183%`.
+references:
+    - https://learn.microsoft.com/en-us/rest/api/storagerp/storage-accounts/revoke-user-delegation-keys
+    - https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations#microsoftstorage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema
+author: TrustOnCloud
+date: 2026-06-06
+tags:
+    - trustoncloud.azure.storage
+    - trustoncloud.control.storage.c183
+logsource:
+    product: azure
+    service: activity
+detection:
+    selection:
+        OperationNameValue|contains: 'MICROSOFT.STORAGE/STORAGEACCOUNTS/REVOKEUSERDELEGATIONKEYS/ACTION'
+        ActivityStatusValue:
+            - Success
+            - Failure
+            - Failed
+    filter_authorized_caller:
+        Caller|expand: '%authorized_callers_c183%'
+    condition: selection and not filter_authorized_caller
+falsepositives:
+    - Authorized revocation principals not yet added to the allowlist.
+level: medium

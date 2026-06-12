@@ -1,0 +1,33 @@
+title: Azure Storage C181 - Storage Account Key Access Or Lifecycle
+id: 1dfc1685-7629-4195-991e-fe989bc1d1e2
+status: experimental
+description: Monitor Azure activity log for storage account key access and lifecycle operations (e.g., by using an Azure custom policy on authorization.action where value is "Microsoft.Storage/storageAccounts/listKeys/action", "Microsoft.Storage/storageAccounts/regenerateKey/action", or "Microsoft.Storage/storageAccounts/rotateKey/action" in Audit mode).
+testing: Perform a storage account key access or lifecycle operation; it should be detected.
+notes: |
+    Fires when a storage account's keys are listed, regenerated, or rotated (`listKeys` / `regenerateKey` / `rotateKey`).
+references:
+    - https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage
+    - https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations#microsoftstorage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema
+author: TrustOnCloud
+date: 2026-06-06
+tags:
+    - trustoncloud.azure.storage
+    - trustoncloud.control.storage.c181
+logsource:
+    product: azure
+    service: activity
+detection:
+    selection:
+        OperationNameValue|contains:
+            - 'MICROSOFT.STORAGE/STORAGEACCOUNTS/LISTKEYS/ACTION'
+            - 'MICROSOFT.STORAGE/STORAGEACCOUNTS/REGENERATEKEY/ACTION'
+            - 'MICROSOFT.STORAGE/STORAGEACCOUNTS/ROTATEKEY/ACTION'
+        ActivityStatusValue:
+            - Success
+            - Failure
+            - Failed
+    condition: selection
+falsepositives:
+    - Automation and portal sessions that legitimately read or rotate account keys (very common for listKeys).
+level: high

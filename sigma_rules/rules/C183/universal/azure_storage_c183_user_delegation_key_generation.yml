@@ -1,0 +1,27 @@
+title: Azure Storage C183 - User Delegation Key Generation
+id: 119e92f8-41a4-4248-b312-3997a7eec447
+status: experimental
+description: Monitor for user delegation key operations on blob storage (generation and revocation), e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action" or "Microsoft.Storage/storageAccounts/revokeUserDelegationKeys/action" in Audit mode.
+testing: Perform a user delegation key operation on blob storage; it should be detected.
+notes: |
+    Detects the generation side: a GetUserDelegationKey request, which mints the key behind a user delegation SAS.
+references:
+    - https://learn.microsoft.com/en-us/azure/storage/blobs/monitor-blob-storage-reference
+    - https://learn.microsoft.com/en-us/rest/api/storageservices/get-user-delegation-key
+    - https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-user-delegation-sas-create-cli
+author: TrustOnCloud
+date: 2026-06-06
+tags:
+    - trustoncloud.azure.storage
+    - trustoncloud.control.storage.c183
+logsource:
+    product: azure
+    service: storagebloblogs
+detection:
+    selection:
+        OperationName: GetUserDelegationKey
+        AuthenticationType: OAuth
+    condition: selection
+falsepositives:
+    - Applications that mint Entra-based (user delegation) SAS as part of normal operation.
+level: medium
