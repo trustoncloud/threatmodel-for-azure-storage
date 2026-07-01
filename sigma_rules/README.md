@@ -38,14 +38,11 @@ TrustOnCloud threatmodels use a five-step scale that almost matches Sigma. As of
 
 ## Log sources
 
-The Azure Storage controls read from two different log sources, because Azure splits its logging into a control plane and a data plane:
+The Azure Storage controls currently read from a single log source:
 
 | Log source | What it covers | Controls |
 |---|---|---|
-| `AzureActivity` | Control-plane (management) operations, available via the Azure Activity Log connector | C101, C179, C180, C181, C182, C183 (revocation), C184 |
-| `StorageBlobLogs` | Data-plane blob operations, enabled per storage account via a blob-service diagnostic setting | C183 (generation), C185 |
-
-`StorageBlobLogs` is a high-volume source. To control ingestion cost, filter it at ingestion time to the operations these rules need (see `docs/reference/azure-storagebloblogs.md` for the recommended Workspace Transformation DCR and field-casing notes).
+| `AzureActivity` | Control-plane (management) operations, available via the Azure Activity Log connector | C101, C179, C180 |
 
 ## Variables
 
@@ -55,7 +52,7 @@ Each variable name carries the **control ID it belongs to** as a suffix, so it's
 
 | File | What it contains |
 |---|---|
-| `customer.azure.storage.example.yml` | Sample Azure Storage profile, with placeholder storage accounts, file-share paths, and authorized caller object IDs |
+| `customer.azure.storage.example.yml` | Sample Azure Storage profile, with placeholder storage accounts and file-share paths |
 
 ### How to use the variables
 
@@ -72,8 +69,3 @@ Each variable name carries the **control ID it belongs to** as a suffix, so it's
 | 1 | C101 | Monitor the creation or update of Azure Files NFS/SMB 2.1 and corresponding settings (e.g., using activity logs on properties.supportsHttpsTrafficOnly scope "supportsHttpsTrafficOnly"). | Modify or create a file share that does not require NFS/SMB 2.1 to use NFS/SMB 2.1; it should be detected. | Detects file-service, file-share, or storage-account write operations that set SMB 2.1, NFS, or supportsHttpsTrafficOnly. The allowlist mode suppresses authorized file-service and storage-account scopes. | Low | Yes | N/A | Yes |
 | 2 | C179 | Monitor Azure activity log for configuration operations on blob storage containers (e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/blobServices/containers/clearLegalHold/action", "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/write", or "Microsoft.Storage/storageAccounts/blobServices/containers/setLegalHold/action" in Audit mode). | Perform a configuration change on a blob storage container; it should be detected. | Detects legal-hold and immutability (WORM) policy changes on blob containers: setting or clearing a legal hold, or writing an immutability policy. | High | N/A | N/A | Yes |
 | 3 | C180 | Monitor the Azure activity log for key access operations on storage local users (e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/localUsers/listKeys/action" in Audit mode). | Perform a key access operation on a local storage user; it should be detected. | Detects listing of a storage account's local-user keys, the credentials behind SFTP / NFS local-user access. | Medium | N/A | N/A | Yes |
-| 4 | C181 | Monitor Azure activity log for storage account key access and lifecycle operations (e.g., by using an Azure custom policy on authorization.action where value is "Microsoft.Storage/storageAccounts/listKeys/action", "Microsoft.Storage/storageAccounts/regenerateKey/action", or "Microsoft.Storage/storageAccounts/rotateKey/action" in Audit mode). | Perform a storage account key access or lifecycle operation; it should be detected. | Detects storage account key list, regenerate, and rotate operations. The allowlist mode suppresses authorized callers, surfacing only unexpected principals. | High | Yes | N/A | Yes |
-| 5 | C182 | Monitor the Azure activity log for SAS token generation operations on storage accounts (e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/ListAccountSas/action" or "Microsoft.Storage/storageAccounts/ListServiceSas/action" in Audit mode). | Perform a SAS token generation operation on a storage account; it should be detected. | Detects account and service SAS token generation. The allowlist mode suppresses authorized callers. | Medium | Yes | N/A | Yes |
-| 6 | C183 | Monitor for user delegation key operations on blob storage (generation and revocation), e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action" or "Microsoft.Storage/storageAccounts/revokeUserDelegationKeys/action" in Audit mode. | Perform a user delegation key operation on blob storage; it should be detected. | Implemented as two rules because the operations live on different planes: generation (GetUserDelegationKey, the key behind user delegation SAS) is detected in StorageBlobLogs, and revocation (revokeUserDelegationKeys, which invalidates all outstanding user delegation SAS) is detected in the activity log. Allowlist modes suppress authorized callers. | Medium | Yes | N/A | Yes |
-| 7 | C184 | Monitor the Azure activity log for storage account failover operations (e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/failover/action" in Audit mode). | Perform a storage account failover operation; it should be detected. | Detects storage account failover, which promotes the secondary region and can drop writes not yet replicated. | High | N/A | N/A | Yes |
-| 8 | C185 | Monitor for blob move operations on blob storage (e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action" in Audit mode). | Perform a blob move operation; it should be detected. | Detects blob move or rename operations (RenamePathFile, or SftpRename over SFTP) in hierarchical-namespace (ADLS Gen2) accounts, via StorageBlobLogs. The allowlist mode suppresses accounts where moves are normal. | Low | Yes | N/A | Yes |

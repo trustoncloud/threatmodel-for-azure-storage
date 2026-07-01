@@ -1,7 +1,7 @@
 # customer.azure.storage.example.yml: sample profile for the Azure Storage rules.
 # Copy to customer.azure.storage-<name>.yml and replace every value with your own
-# storage accounts, file-share paths, and authorized callers. Skip this file if you
-# don't use the Azure Storage rules.
+# storage accounts and file-share paths. Skip this file if you don't use the
+# Azure Storage rules.
 #
 # These rules are allowlist/universal only, so there is no denylist-defaults file
 # to pass alongside. Every variable carries its control-ID suffix (`_cNNN`).
@@ -18,21 +18,6 @@ vars:
   authorized_storage_account_paths_c101:
     - '/storageaccounts/orgprodstorage01'
 
-  # C181 / C182 / C183: authorized callers to suppress. Use the principal's OBJECT
-  # ID (GUID); it matches both the Caller and RequesterObjectId fields. A UPN
-  # matches only Caller, so C183 generation would ignore it.
-  authorized_callers_c181:
-    - '11111111-1111-1111-1111-111111111111'
-  authorized_callers_c182:
-    - '11111111-1111-1111-1111-111111111111'
-  authorized_callers_c183:
-    - '11111111-1111-1111-1111-111111111111'
-
-  # C185: storage accounts where blob moves are normal (suppressed). Matched on
-  # the StorageBlobLogs AccountName field (bare account name).
-  authorized_storage_accounts_c185:
-    - 'orgprodstorage01'
-
 transformations:
   - id: expand_authorized_file_service_paths_c101
     type: value_placeholders
@@ -40,15 +25,3 @@ transformations:
   - id: expand_authorized_storage_account_paths_c101
     type: value_placeholders
     include: [authorized_storage_account_paths_c101]
-  - id: expand_authorized_callers_c181
-    type: value_placeholders
-    include: [authorized_callers_c181]
-  - id: expand_authorized_callers_c182
-    type: value_placeholders
-    include: [authorized_callers_c182]
-  - id: expand_authorized_callers_c183
-    type: value_placeholders
-    include: [authorized_callers_c183]
-  - id: expand_authorized_storage_accounts_c185
-    type: value_placeholders
-    include: [authorized_storage_accounts_c185]
