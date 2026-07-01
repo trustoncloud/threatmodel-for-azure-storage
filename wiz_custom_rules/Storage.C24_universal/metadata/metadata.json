@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C24 - hns_enabled_detection (universal)",
+  "enabled": true,
+  "function_as_control": true,
+  "severity": "LOW",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC24"
+    },
+    {
+      "key": "mode",
+      "value": "universal"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO21"
+    },
+    {
+      "key": "csp",
+      "value": "azure"
+    },
+    {
+      "key": "service",
+      "value": "azurestorage"
+    }
+  ]
+}

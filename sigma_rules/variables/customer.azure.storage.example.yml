@@ -1,0 +1,27 @@
+# customer.azure.storage.example.yml: sample profile for the Azure Storage rules.
+# Copy to customer.azure.storage-<name>.yml and replace every value with your own
+# storage accounts and file-share paths. Skip this file if you don't use the
+# Azure Storage rules.
+#
+# These rules are allowlist/universal only, so there is no denylist-defaults file
+# to pass alongside. Every variable carries its control-ID suffix (`_cNNN`).
+
+name: example customer (azure storage)
+priority: 20
+vars:
+  # C101: file NFS / SMB 2.1 config change. ResourceId substrings, lowercase (see
+  # docs/reference/azure-storagebloblogs.md on casing). Two scopes: file-service /
+  # share paths, and the storage account.
+  authorized_file_service_paths_c101:
+    - '/storageaccounts/orgprodstorage01/fileservices/default'
+    - '/storageaccounts/orgprodstorage01/fileservices/default/shares/prod-share-01'
+  authorized_storage_account_paths_c101:
+    - '/storageaccounts/orgprodstorage01'
+
+transformations:
+  - id: expand_authorized_file_service_paths_c101
+    type: value_placeholders
+    include: [authorized_file_service_paths_c101]
+  - id: expand_authorized_storage_account_paths_c101
+    type: value_placeholders
+    include: [authorized_storage_account_paths_c101]

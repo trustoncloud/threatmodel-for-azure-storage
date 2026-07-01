@@ -1,0 +1,42 @@
+title: Azure Storage C101 - Azure Files NFS/SMB 2.1 Configuration Change
+id: bd32fdf2-ac5a-4f6a-be23-1cc2e9073389
+status: experimental
+description: Monitor the creation or update of Azure Files NFS/SMB 2.1 and corresponding settings (e.g., using activity logs on properties.supportsHttpsTrafficOnly scope "supportsHttpsTrafficOnly").
+testing: Modify or create a file share that does not require NFS/SMB 2.1 to use NFS/SMB 2.1; it should be detected.
+notes: |
+    Fires on any file-service, file-share, or storage-account write operation that sets SMB 2.1, NFS, or `supportsHttpsTrafficOnly`.
+references:
+    - https://learn.microsoft.com/en-us/azure/storage/files/storage-files-networking-overview
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-schema
+    - https://learn.microsoft.com/en-us/rest/api/storagerp/file-services/set-service-properties
+    - https://learn.microsoft.com/en-us/rest/api/storagerp/file-shares/create
+author: TrustOnCloud
+date: 2026-03-08
+tags:
+    - trustoncloud.azure.storage
+    - trustoncloud.control.storage.c101
+logsource:
+    product: azure
+    service: activity
+detection:
+    selection_operation_file_settings:
+        OperationNameValue|contains:
+            - 'MICROSOFT.STORAGE/STORAGEACCOUNTS/FILESERVICES/WRITE'
+            - 'MICROSOFT.STORAGE/STORAGEACCOUNTS/FILESERVICES/SHARES/WRITE'
+    selection_operation_storage_account:
+        OperationNameValue|contains: 'MICROSOFT.STORAGE/STORAGEACCOUNTS/WRITE'
+    selection_file_setting_smb21:
+        Properties|contains: 'SMB2.1'
+    selection_file_setting_nfs:
+        Properties|re: '"enabledProtocols"\s*:\s*"NFS"'
+    selection_storage_setting_https:
+        Properties|contains: 'supportsHttpsTrafficOnly'
+    selection_status:
+        ActivityStatusValue:
+            - Success
+            - Failure
+            - Failed
+    condition: selection_status and ((selection_operation_file_settings and 1 of selection_file_setting_*) or (selection_operation_storage_account and selection_storage_setting_https))
+falsepositives:
+    - Planned Azure Files protocol hardening or storage baseline changes.
+level: low

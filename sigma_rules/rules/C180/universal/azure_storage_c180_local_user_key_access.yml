@@ -1,0 +1,30 @@
+title: Azure Storage C180 - Local User Key Access
+id: 0a99def1-4c31-4fd1-9ed6-035fedbcf7f7
+status: experimental
+description: Monitor the Azure activity log for key access operations on storage local users (e.g., by using an Azure custom policy on authorization.action where the value is "Microsoft.Storage/storageAccounts/localUsers/listKeys/action" in Audit mode).
+testing: Perform a key access operation on a local storage user; it should be detected.
+notes: |
+    Fires when a storage account's local-user keys are listed (`localUsers/listKeys`), the credentials behind SFTP / NFS local-user access.
+references:
+    - https://learn.microsoft.com/en-us/azure/storage/blobs/secure-file-transfer-protocol-support
+    - https://learn.microsoft.com/en-us/azure/role-based-access-control/resource-provider-operations#microsoftstorage
+    - https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log-schema
+author: TrustOnCloud
+date: 2026-06-06
+tags:
+    - trustoncloud.azure.storage
+    - trustoncloud.control.storage.c180
+logsource:
+    product: azure
+    service: activity
+detection:
+    selection:
+        OperationNameValue|contains: 'MICROSOFT.STORAGE/STORAGEACCOUNTS/LOCALUSERS/LISTKEYS/ACTION'
+        ActivityStatusValue:
+            - Success
+            - Failure
+            - Failed
+    condition: selection
+falsepositives:
+    - Approved SFTP / local-user automation that retrieves local-user keys.
+level: medium
