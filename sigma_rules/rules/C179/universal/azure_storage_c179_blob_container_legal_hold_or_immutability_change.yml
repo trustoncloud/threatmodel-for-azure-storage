@@ -31,4 +31,4 @@ detection:
     condition: selection
 falsepositives:
     - Approved compliance or retention automation that manages legal holds and immutability policies.
-level: high
+level: medium
