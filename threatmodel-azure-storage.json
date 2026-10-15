@@ -10,7 +10,7 @@
       "Azure Tables",
       "Azure Data Lake Storage"
     ],
-    "version": "20240423",
+    "version": "20260925",
     "scf_version": "2024.1.1",
     "license": "ThreatModel for Azure Storage, by TrustOnCloud, under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). Find latest source at https://github.com/trustoncloud/threatmodel-for-azure-storage",
     "source": "https://github.com/trustoncloud/threatmodel-for-azure-storage"
@@ -117,6 +117,7 @@
       "class_relationship": [],
       "description": "Azure Storage is Microsoft's Cloud Storage solution for modern data storage scenarios. Azure Storage offers a scalable object store for data objects, a file system service for the cloud, a messaging store for reliable messaging, and a NoSQL store.",
       "long_description": "",
+      "retired": false,
       "order": 0
     },
     "Storage.FC2": {
@@ -129,6 +130,7 @@
       ],
       "description": "Object storage solution for storing unstructured data (blobs) accessible via HTTP/S and optionally via the Network File System (NFS) v3 and SFTP protocols.",
       "long_description": "",
+      "retired": false,
       "order": 1
     },
     "Storage.FC3": {
@@ -141,6 +143,7 @@
       ],
       "description": "Azure Files offers fully governed file shares in the cloud accessible via Server Message Block (SMB) protocol, Network File System (NFS) v4.1 protocol, or the in-preview Azure Files REST API.",
       "long_description": "",
+      "retired": false,
       "order": 3
     },
     "Storage.FC4": {
@@ -153,6 +156,7 @@
       ],
       "description": "Azure Queue Storage is a service for storing messages. Access messages via HTTP/S calls.",
       "long_description": "",
+      "retired": false,
       "order": 4
     },
     "Storage.FC5": {
@@ -165,6 +169,7 @@
       ],
       "description": "Azure table storage is a service that stores non-relational structured data (or structured NoSQL data) in the cloud, providing a key/attribute store with a schemaless design.",
       "long_description": "",
+      "retired": false,
       "order": 5
     },
     "Storage.FC10": {
@@ -177,6 +182,7 @@
       ],
       "description": "The Azure Storage blob inventory feature provides an overview of your containers, blobs, snapshots, and blob versions within a storage account. Use the inventory report to understand various attributes of blobs and containers, such as the total data size, age, encryption status, immutability policy, and legal hold.",
       "long_description": "",
+      "retired": false,
       "order": 2
     },
     "Storage.FC11": {
@@ -189,6 +195,7 @@
       ],
       "description": "Blob storage supports the SSH File Transfer Protocol (SFTP). This support lets you securely connect to blob storage via an SFTP endpoint, allowing you to use SFTP for file access, file transfer, and file management.",
       "long_description": "",
+      "retired": false,
       "order": 6
     },
     "Storage.FC12": {
@@ -201,6 +208,7 @@
       ],
       "description": "Azure Storage private endpoint is a network interface that enables secure, private connectivity between Azure Storage and virtual networks using Azure Private Link, preventing exposure to the public internet and enhancing security.",
       "long_description": "",
+      "retired": false,
       "order": 7
     }
   },
@@ -219,7 +227,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0006",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "High",
       "cvss_score": 8.1
     },
@@ -236,7 +244,7 @@
       "hlgoal": "DoS",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:H",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 4.5
     },
@@ -248,7 +256,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "High",
       "cvss_score": 7.5
     },
@@ -262,7 +270,7 @@
       "hlgoal": "DataManipulation",
       "mitre_attack": "TA0002",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -276,7 +284,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 4.5
     },
@@ -293,7 +301,7 @@
       "hlgoal": "DoS",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:H",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -310,7 +318,7 @@
       "hlgoal": "DataManipulation",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:L/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.7
     },
@@ -324,7 +332,7 @@
       "hlgoal": "FinancialGain",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.1
     },
@@ -338,7 +346,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0003",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:R/S:U/C:L/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.1
     },
@@ -352,7 +360,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -366,7 +374,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.7
     },
@@ -380,7 +388,7 @@
       "hlgoal": "FinancialDrain",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 3.5
     },
@@ -397,7 +405,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0004",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:C/C:L/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.9
     },
@@ -411,7 +419,7 @@
       "hlgoal": "DoS",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.1
     },
@@ -428,7 +436,7 @@
       "hlgoal": "FinancialGain",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.1
     },
@@ -442,7 +450,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0003",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.6
     },
@@ -456,7 +464,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:R/S:U/C:L/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 4.6
     },
@@ -473,7 +481,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0007",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 3.5
     },
@@ -487,7 +495,7 @@
       "hlgoal": "DataManipulation",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -501,7 +509,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0004",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:R/S:U/C:N/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 4.0
     },
@@ -518,7 +526,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0004",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.2
     },
@@ -535,7 +543,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0004",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.2
     },
@@ -553,7 +561,7 @@
       "hlgoal": "DataManipulation",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:H",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.1
     },
@@ -567,7 +575,7 @@
       "hlgoal": "FinancialDrain",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 4.6
     },
@@ -581,7 +589,7 @@
       "hlgoal": "DoS",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:N/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 4.8
     },
@@ -595,7 +603,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -609,7 +617,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -623,7 +631,7 @@
       "hlgoal": "DoS",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 3.5
     },
@@ -637,7 +645,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0003",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:L/I:L/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 3.5
     },
@@ -651,7 +659,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.7
     },
@@ -665,7 +673,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0001",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 2.4
     },
@@ -679,7 +687,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -697,7 +705,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -711,7 +719,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.7
     },
@@ -725,7 +733,7 @@
       "hlgoal": "DoS",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:L/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 3.5
     },
@@ -739,7 +747,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 2.4
     },
@@ -753,7 +761,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 4.2
     },
@@ -767,7 +775,7 @@
       "hlgoal": "DoS",
       "mitre_attack": "TA0040",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 2.4
     },
@@ -781,7 +789,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.7
     },
@@ -795,7 +803,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0006",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:C/C:H/I:L/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 6.9
     },
@@ -807,7 +815,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0001",
       "cvss": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:L/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.9
     },
@@ -824,7 +832,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0004",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "High",
       "cvss_score": 8.1
     },
@@ -841,7 +849,7 @@
       "hlgoal": "DataTheft",
       "mitre_attack": "TA0010",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:H/I:L/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Medium",
       "cvss_score": 5.2
     },
@@ -855,7 +863,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0001",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 2.4
     },
@@ -869,7 +877,7 @@
       "hlgoal": "LaunchAttack",
       "mitre_attack": "TA0001",
       "cvss": "CVSS:3.1/AV:A/AC:L/PR:H/UI:N/S:U/C:L/I:N/A:N",
-      "retired": "false",
+      "retired": false,
       "cvss_severity": "Low",
       "cvss_score": 2.4
     }
@@ -887,7 +895,7 @@
         "MON-03",
         "MON-16"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO4": {
       "description": "Restrict access to storage accounts and their services (e.g., Azure Files, containers, blobs, queues)",
@@ -908,7 +916,7 @@
         "NET-02",
         "NET-10"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO5": {
       "description": "Ensure backup, replication, and recovery capabilities for storage account services",
@@ -917,7 +925,7 @@
         "BCD-12",
         "BCD-13"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO7": {
       "description": "Restrict access to Data Lake Storage containers by integrating ACLs into the IAM Operating Model",
@@ -942,7 +950,7 @@
         "MON-03",
         "MON-16"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO8": {
       "description": "Enforce encryption in transit",
@@ -951,7 +959,7 @@
         "CRY-04",
         "NET-12"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO9": {
       "description": "Limit network access to storage account services with private endpoints",
@@ -964,7 +972,7 @@
         "NET-06",
         "NET-10"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO11": {
       "description": "Enable enhanced monitoring and notifications for storage accounts",
@@ -978,7 +986,7 @@
         "MON-08",
         "MON-16"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO12": {
       "description": "Enforce encryption on data at rest and protect encryption keys",
@@ -988,7 +996,7 @@
         "CRY-05",
         "CRY-09"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO14": {
       "description": "Restrict and manage external websites (origins) that can make browser-based requests to storage accounts",
@@ -1004,21 +1012,21 @@
         "NET-06",
         "NET-10"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO17": {
       "description": "Verify the safety of objects ingested and produced",
       "scf": [
         "END-04"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO18": {
       "description": "Ensure storage accounts use authorized account types",
       "scf": [
         "TDA-17"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO21": {
       "description": "Restrict access to Data Lake Storage, including SFTP, by integrating the IAM Operating Model",
@@ -1031,7 +1039,7 @@
         "MON-16",
         "TDA-17"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO22": {
       "description": "Ensure storage account keys, Shared Key authorization, and SAS tokens are restricted to authorized use",
@@ -1040,7 +1048,7 @@
         "IAC-18",
         "IAC-19"
       ],
-      "retired": "false"
+      "retired": false
     },
     "Storage.CO24": {
       "description": "Protect the integrity of blob storage data",
@@ -1055,7 +1063,7 @@
         "IAC-20",
         "IAC-21"
       ],
-      "retired": "false"
+      "retired": false
     }
   },
   "controls": {
@@ -1063,7 +1071,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO1",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Limit and monitor the access to the IAM actions required to perform attacks using Azure RBAC and local privileges, limiting them to Trusted Networks with Conditional Access and Just-in-Time access using Privileged Identity Management when possible, following the Entra ID, Azure Resource Manager, and Azure Management ThreatModels.",
@@ -1434,7 +1442,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage accounts and their authorized authentication methods enabled according to requirements (e.g., Entra ID, SAS token).",
@@ -1587,7 +1595,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of storage accounts authorized to have public network access enabled.",
@@ -1632,7 +1640,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C9",
       "depends_on": "Storage.C6",
       "description": "Ensure only authorized storage accounts have public network access enabled.",
@@ -1677,7 +1685,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C6",
       "description": "Prevent unauthorized storage accounts from having public network access enabled (e.g., by using Azure built-in policy \"Storage accounts should disable public network access\" in Deny mode).",
@@ -1722,7 +1730,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify unauthorized storage accounts do not have public network access enabled (e.g., by using Azure built-in policy \"Storage accounts should disable public network access\" in Audit mode).",
@@ -1742,7 +1750,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C11",
       "depends_on": "Storage.C144",
       "description": "Ensure versioning is enabled on required containers.",
@@ -1778,7 +1786,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify versioning is enabled on required containers (e.g., by using Azure built-in policy \"Configure your Storage account to enable blob versioning\" in Audit mode).",
@@ -1797,7 +1805,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C13",
       "depends_on": "Storage.C145",
       "description": "Ensure snapshots are enabled for required file shares.",
@@ -1825,7 +1833,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify snapshots are enabled for required file shares (e.g., by using a custom Azure Policy on {\"properties.shareSnapshotEnabled\": false} in Audit mode).",
@@ -1844,7 +1852,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of the blob storage containers that are required to have a minimum retention period enabled.",
@@ -1905,7 +1913,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C18",
       "depends_on": "Storage.C15",
       "description": "Ensure required storage accounts have the soft-delete feature for blobs enabled for the defined minimum retention period.",
@@ -1949,7 +1957,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C15",
       "description": "Prevent the creation of required storage accounts without the blob soft-delete option enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/deleteRetentionPolicy.enabled\": false} in Deny mode).",
@@ -1994,7 +2002,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required storage accounts have the blob soft-delete option enabled (e.g., by using custom Azure Policy in Audit mode).",
@@ -2013,7 +2021,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C21",
       "depends_on": "Storage.C15",
       "description": "Ensure required storage accounts have the soft-delete option enabled for the containers.",
@@ -2074,7 +2082,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C15",
       "description": "Prevent the creation of containers without the soft-delete option enabled (e.g., by using a custom Azure Policy on \"Microsoft.Storage/storageAccounts/blobServices/containers/softDelete\" in Deny mode).",
@@ -2119,7 +2127,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required storage accounts have container soft delete enabled (e.g., by using a custom Azure Policy in Audit mode).",
@@ -2139,7 +2147,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO21",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C2",
       "description": "Maintain a list of storage accounts that require hierarchical namespace (i.e., Data Lake Storage) and SSH enabled.",
@@ -2192,7 +2200,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO21",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C24",
       "depends_on": "Storage.C22",
       "description": "Ensure all required storage accounts have hierarchical namespace (i.e., Data Lake Storage) enabled.",
@@ -2220,7 +2228,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO21",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only required storage accounts have the hierarchical namespace (HNS) option enabled (e.g., by using a custom Azure Policy on {\"isHnsEnabled\": \"true\"} in Audit mode).",
@@ -2239,7 +2247,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C2",
       "description": "Maintain the list of storage accounts authorized to use SAS tokens, including authorized services, permissions, expiration, and access methods.",
@@ -2326,7 +2334,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C28",
       "depends_on": "Storage.C26",
       "description": "Ensure SAS tokens are used only for authorized storage accounts, services, permissions, expiration, and access methods.",
@@ -2413,7 +2421,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify SAS tokens are used only for authorized storage accounts, services, permissions, expiration, and access methods.",
@@ -2435,7 +2443,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage container blobs that require immutability or soft delete.",
@@ -2495,7 +2503,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C146",
       "depends_on": "Storage.C32",
       "description": "Ensure required storage container blobs have immutability or soft delete enabled.",
@@ -2547,7 +2555,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of authorized private endpoints on storage accounts.",
@@ -2627,7 +2635,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C40",
       "depends_on": "Storage.C37",
       "description": "Ensure only authorized private endpoints are configured on storage accounts.",
@@ -2707,7 +2715,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only authorized private endpoints are configured on storage accounts (e.g., by using the built-in Azure Policy \"Storage accounts should use Private Link\" in Audit mode).",
@@ -2730,7 +2738,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of authorized IPs that are permitted through each storage account firewall.",
@@ -2801,7 +2809,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C45",
       "depends_on": "Storage.C42",
       "description": "Ensure each storage account firewall only allows authorized IPs.",
@@ -2872,7 +2880,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C42",
       "description": "Prevent storage account firewall rules from allowing unauthorized IPs (e.g., by using the Azure built-in policy \"Storage accounts should restrict network access\" in Deny mode).",
@@ -2926,7 +2934,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify storage account firewall rules allow only authorized IPs (e.g., by using built-in Azure Policy \"Storage accounts should restrict network access\" in Audit mode).",
@@ -2948,7 +2956,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C147",
       "description": "Ensure storage blobs are using Azure Backup, following the requirements in the Azure Backup ThreatModel.",
@@ -2992,7 +3000,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage accounts that require cross-tenant replication and their allowed destination tenants.",
@@ -3036,7 +3044,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C49",
       "depends_on": "Storage.C47",
       "description": "Ensure only required storage accounts have cross-tenant replication enabled and the destination storage accounts are authorized.",
@@ -3080,7 +3088,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only the storage accounts that require cross-tenant replication have it enabled (e.g., by using the Azure built-in policy StorageAccountAllowCrossTenantReplication_Audit.json).",
@@ -3099,7 +3107,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO11",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage accounts that require diagnostic settings to be enabled and their respective log destinations.",
@@ -3160,7 +3168,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO11",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C54",
       "depends_on": "Storage.C50",
       "description": "Ensure diagnostic settings are enabled on storage accounts that require it, and their respective log destinations are authorized.",
@@ -3221,7 +3229,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO11",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify storage accounts have diagnostic settings configured (e.g., by using built-in Azure Policy \"Configure diagnostic settings for storage accounts to Log Analytics workspace\" in Audit mode).",
@@ -3241,7 +3249,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of blobs and containers that require anonymous access.",
@@ -3286,7 +3294,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C59",
       "depends_on": "Storage.C55",
       "description": "Ensure anonymous access is set only for required blobs and containers.",
@@ -3331,7 +3339,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C59",
       "depends_on": "Storage.C55",
       "description": "Ensure only required blobs and containers are anonymously accessible (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/blobServices/containers/publicAccess\": \"Blob\"} in Deny mode).",
@@ -3376,7 +3384,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only required blobs or containers are anonymously accessible (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/blobServices/containers/publicAccess\": \"Blob\"} in Audit mode).",
@@ -3396,7 +3404,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO12",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of authorized customer-managed keys used by storage accounts.",
@@ -3433,7 +3441,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO12",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C65",
       "depends_on": "Storage.C60",
       "description": "Ensure only authorized customer-managed keys are configured for storage accounts.",
@@ -3470,7 +3478,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO12",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C65",
       "depends_on": "Storage.C61",
       "description": "Prevent storage accounts that require customer-managed keys from using service-managed keys (e.g., by using built-in Azure Policy \"Storage accounts should use customer-managed key for encryption\" in Deny mode).",
@@ -3507,7 +3515,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO12",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only authorized customer-managed keys are configured for storage accounts (e.g., by using the built-in Azure Policy \"Storage accounts should use customer-managed key for encryption\" in Audit mode).",
@@ -3527,7 +3535,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage accounts that require redundancy.",
@@ -3555,7 +3563,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C74",
       "depends_on": "Storage.C71",
       "description": "Ensure required storage accounts use redundancy.",
@@ -3583,7 +3591,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required storage accounts use redundancy (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/sku.name\": [\"Standard_GRS\",\"Standard_ZRS\"]} in Audit mode).",
@@ -3602,7 +3610,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of authorized storage account regions that can be used for redundancy.",
@@ -3630,7 +3638,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C78",
       "depends_on": "Storage.C75",
       "description": "Ensure the authorized storage account region used for redundancy is configured.",
@@ -3658,7 +3666,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C75",
       "description": "Ensure only the authorized storage account region is set for redundancy (e.g., by using a custom Azure Policy on {\"location\": [\"eastus\",\"westeurope\"]} in Deny mode).",
@@ -3686,7 +3694,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only the authorized storage account region is set for redundancy (e.g., by using a custom Azure Policy with {\"location\": [\"eastus\",\"westeurope\"]} in Audit mode).",
@@ -3705,7 +3713,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify Shared Key authorization is disabled (and optionally that OAuth is the default) for authorized storage accounts that host authorized blobs, file shares, queues, tables, and DFS (e.g., by using a custom Azure Policy to require \"Microsoft.Storage/storageAccounts/allowSharedKeyAccess\" = false and, optionally, \"Microsoft.Storage/storageAccounts/defaultToOAuthAuthentication\" = true in Audit mode).",
@@ -3725,7 +3733,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Define the minimum retention period for required file shares (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/deleteRetentionPolicy.days\": 7} in Deny mode).",
@@ -3753,7 +3761,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C86",
       "depends_on": "Storage.C83",
       "description": "Ensure file shares have the soft-delete option enabled for at least the defined minimum retention period.",
@@ -3781,7 +3789,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C83",
       "description": "Prevent the creation of file shares without the soft-delete option enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/shares/deleteRetentionPolicy.enabled\": false} in Deny mode).",
@@ -3809,7 +3817,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify all file shares have the soft-delete option enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/shares/deleteRetentionPolicy.enabled\": false} in Audit mode).",
@@ -3828,7 +3836,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Define the requirements for authorized use of storage account keys and Shared Key authorization, including key rotation requirements and when Shared Key authorization is permitted.",
@@ -3915,7 +3923,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C89",
       "depends_on": "Storage.C87",
       "description": "Ensure storage account keys and Shared Key authorization are managed according to authorized use, key rotation, and Shared Key authorization requirements.",
@@ -4002,7 +4010,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify storage account keys and Shared Key authorization are managed according to authorized use, key rotation, and Shared Key authorization requirements.",
@@ -4024,7 +4032,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage accounts that require static website hosting.",
@@ -4052,7 +4060,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C93",
       "depends_on": "Storage.C90",
       "description": "Ensure only storage accounts that require static website hosting have it enabled.",
@@ -4080,7 +4088,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C90",
       "description": "Prevent storage accounts that do not require static website hosting from having it enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/staticWebsite.enabled\": true} in Deny mode).",
@@ -4108,7 +4116,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify storage accounts that do not require static website hosting do not have it enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/staticWebsite.enabled\": true} in Audit mode).",
@@ -4127,7 +4135,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO14",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of authorized CORS per endpoint, trusted origins, and corresponding settings.",
@@ -4155,7 +4163,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO14",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C97",
       "depends_on": "Storage.C94",
       "description": "Ensure only authorized storage accounts have CORS-trusted origins and corresponding settings configured.",
@@ -4183,7 +4191,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO14",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C94",
       "description": "Prevent unauthorized storage accounts from using CORS trusted origins and corresponding settings (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/blobServices/cors.allowedOrigins[*]\": [\"https://myapp.contoso.com\"]} in Deny mode).",
@@ -4211,7 +4219,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO14",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only authorized CORS trusted origins and corresponding settings are configured (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/blobServices/cors.allowedOrigins[*]\": [\"https://myapp.contoso.com\"]} in Audit mode).",
@@ -4230,7 +4238,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of file shares that require NFS/SMB 2.1 to be enabled.",
@@ -4258,7 +4266,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C102",
       "depends_on": "Storage.C98",
       "description": "Ensure only file shares that require NFS/SMB 2.1 have it enabled.",
@@ -4286,7 +4294,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C98",
       "description": "Prevent file shares that do not require NFS/SMB 2.1 from being enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.protocolVersions[*]\": [\"SMB2.1\"]} in Deny mode).",
@@ -4314,7 +4322,7 @@
       "coso": "Detective",
       "nist_csf": "Detect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Monitor the creation or update of Azure Files NFS/SMB 2.1 and corresponding settings (e.g., using activity logs on properties.supportsHttpsTrafficOnly with scope \"supportsHttpsTrafficOnly\").",
@@ -4342,7 +4350,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only file shares that require NFS/SMB 2.1 have it enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb.protocolVersions[*]\": [\"SMB2.1\"]} in Audit mode).",
@@ -4361,7 +4369,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO17",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of storage accounts that require malware scanning for uploaded blob content.",
@@ -4481,7 +4489,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO17",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C105",
       "depends_on": "Storage.C103",
       "description": "Ensure required storage accounts use malware scanning for uploaded blob content (e.g., by using Microsoft Defender for Storage).",
@@ -4601,7 +4609,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO17",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required storage accounts use malware scanning for uploaded blob content (e.g., by using Microsoft Defender for Storage malware scanning).",
@@ -4624,7 +4632,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of storage accounts required to use Azure resource locks, following the Azure Resource Manager ThreatModel.",
@@ -4669,7 +4677,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C109",
       "depends_on": "Storage.C107",
       "description": "Ensure required storage accounts use Azure resource locks.",
@@ -4714,7 +4722,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required storage accounts use Azure resource locks (e.g., by using built-in Azure Policy \"Resource locks should be applied\" in Audit mode).",
@@ -4734,7 +4742,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Prevent modification or deletion of required storage accounts by using a resource lock set to read-only and/or delete, using the Azure Resource Manager ThreatModel.",
@@ -4780,7 +4788,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO21",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C22",
       "description": "Maintain a list of Data Lake Storage accounts that require SFTP enabled.",
@@ -4808,7 +4816,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO21",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C116",
       "depends_on": "Storage.C111",
       "description": "Ensure only storage accounts that require SFTP have it enabled.",
@@ -4836,7 +4844,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO21",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C111",
       "description": "Prevent storage accounts that do not require SFTP from having it enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/isSftpEnabled\": true} in Deny mode).",
@@ -4864,7 +4872,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO21",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only storage accounts that require SFTP have it enabled (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/isSftpEnabled\": true} in Audit mode).",
@@ -4883,7 +4891,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of required file shares' security protocol settings (ideally maximum security SMB 3.1.1, Kerberos, AES-256 only).",
@@ -4927,7 +4935,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C123",
       "depends_on": "Storage.C120",
       "description": "Ensure required file shares' security protocol settings are set.",
@@ -4971,7 +4979,7 @@
       "coso": "Preventative",
       "nist_csf": "Protect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C120",
       "description": "Prevent security protocol settings from changing on required file shares (e.g., by using custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb\": {\"kerberosTicketEncryption\":\"AES256\",\"channelEncryption\":\"Required\"}} in Deny mode).",
@@ -5007,7 +5015,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required file shares' security protocol settings are configured (e.g., by using a custom Azure Policy on {\"Microsoft.Storage/storageAccounts/fileServices/protocolSettings.smb\": {\"kerberosTicketEncryption\":\"AES256\",\"channelEncryption\":\"Required\"}} in Audit mode).",
@@ -5026,7 +5034,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO18",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of authorized account types (e.g., StorageV2) for each storage account.",
@@ -5244,7 +5252,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO18",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C134",
       "depends_on": "Storage.C132",
       "description": "Ensure storage accounts use authorized account types.",
@@ -5462,7 +5470,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO18",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify storage accounts use authorized account types (e.g., by using Azure built-in policy \"Storage accounts should be migrated to new Azure Resource Manager resources\" in Audit mode).",
@@ -5487,7 +5495,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of storage accounts or blob containers that require blob versioning.",
@@ -5523,7 +5531,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of Azure Files that require snapshots.",
@@ -5551,7 +5559,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO24",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required storage container blobs have immutability policies enabled (e.g., by using the built-in Azure Policy \"Immutable blob storage should be enabled\" in Audit mode).",
@@ -5570,7 +5578,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage blobs that require Azure Backup.",
@@ -5623,7 +5631,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C81",
       "depends_on": "Storage.C2",
       "description": "Ensure required blobs, file shares, queues, tables, and DFS are using authorized authentication methods.",
@@ -5660,7 +5668,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of authorized replication policies and their destination storage accounts.",
@@ -5713,7 +5721,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C152",
       "depends_on": "Storage.C150",
       "description": "Ensure replication policies and their destination storage accounts are authorized.",
@@ -5741,7 +5749,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO5",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify replication policies and their destination storage accounts are authorized (e.g., by using a custom Azure Policy on \"Microsoft.Storage/storageAccounts/objectReplicationPolicies[*].destinationAccount\" and \"Microsoft.Storage/storageAccounts/objectReplicationPolicies[*].rules[*].sourceContainer\" in Audit mode).",
@@ -5760,7 +5768,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C157",
       "depends_on": "Storage.C26",
       "description": "Ensure stored access policies and their permissions are authorized for each container, file share, queue, and table.",
@@ -5805,7 +5813,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO22",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify stored access policies and their permissions are authorized for each container, file share, queue, and table.",
@@ -5825,7 +5833,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO7",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of authorized Access Control Lists (ACLs) on Data Lake Storage containers.",
@@ -5861,7 +5869,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO7",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C160",
       "depends_on": "Storage.C158",
       "description": "Ensure all Access Control Lists (ACLs) on Data Lake Storage containers are authorized.",
@@ -5897,7 +5905,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO7",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify Azure Data Lake Storage Gen2 functionality is enabled only where Access Control Lists (ACLs) on containers are authorized (e.g., by using a custom Azure Policy to detect storage accounts where \"Microsoft.Storage/storageAccounts/isHnsEnabled\" = true and \"Microsoft.Storage/storageAccounts/allowSharedKeyAccess\" = true, in Audit mode).",
@@ -5916,7 +5924,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "Storage.C22",
       "description": "Maintain a list of authorized local users, their permissions, and their authentication methods (e.g., password, SSH) for each hierarchical namespace with SFTP enabled.",
@@ -5960,7 +5968,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C163",
       "depends_on": "Storage.C161",
       "description": "Ensure all local users and associated permissions and authentication methods are authorized.",
@@ -5996,7 +6004,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify local user functionality for SFTP is enabled only where local users, their permissions, and authentication methods are authorized (e.g., by using a custom Azure Policy to detect storage accounts where \"Microsoft.Storage/storageAccounts/localUsersEnabled\" = true and \"Microsoft.Storage/storageAccounts/isSftpEnabled\" = true, in Audit mode).",
@@ -6015,7 +6023,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of authorized storage queues and access methods allowed to read, peek, or dequeue queue messages.",
@@ -6043,7 +6051,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C166",
       "depends_on": "Storage.C164",
       "description": "Ensure only authorized identities and access methods can read, peek, or dequeue storage queue messages.",
@@ -6071,7 +6079,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify only authorized identities and access methods can read, peek, or dequeue storage queue messages.",
@@ -6090,7 +6098,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of authorized virtual network rules for each storage account.",
@@ -6161,7 +6169,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C169",
       "depends_on": "Storage.C167",
       "description": "Ensure each storage account uses only authorized virtual network rules.",
@@ -6232,7 +6240,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify each storage account uses only authorized virtual network rules (e.g., by using Azure built-in policy \"Storage accounts should restrict network access using virtual network rules\" in Audit mode).",
@@ -6254,7 +6262,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the list of authorized network ACL bypass configurations for each storage account.",
@@ -6325,7 +6333,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C172",
       "depends_on": "Storage.C170",
       "description": "Ensure each storage account uses only authorized network ACL bypass configurations.",
@@ -6396,7 +6404,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO9",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify each storage account uses only authorized network ACL bypass configurations (e.g., by using Azure built-in policy \"Storage Accounts should restrict network access through network ACL bypass configuration only\" in Audit mode).",
@@ -6418,7 +6426,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO12",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain a list of storage accounts that require Azure infrastructure encryption (i.e., <a href=\"https://learn.microsoft.com/en-us/azure/storage/common/infrastructure-encryption-enable?tabs=portal\">double encryption</a>).",
@@ -6455,7 +6463,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO12",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C175",
       "depends_on": "Storage.C173",
       "description": "Ensure required storage accounts use Azure infrastructure encryption.",
@@ -6492,7 +6500,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO12",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify required storage accounts use Azure infrastructure encryption (e.g., by using Azure built-in policy \"Storage accounts should have infrastructure encryption\" in Audit mode).",
@@ -6512,7 +6520,7 @@
       "coso": "Directive",
       "nist_csf": "Identify",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Maintain the authorized minimum TLS version for each storage account.",
@@ -6556,7 +6564,7 @@
       "coso": "Directive",
       "nist_csf": "Protect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "Storage.C178",
       "depends_on": "Storage.C176",
       "description": "Ensure storage accounts use the authorized minimum TLS version.",
@@ -6600,7 +6608,7 @@
       "coso": "Assurance",
       "nist_csf": "Detect",
       "objective": "Storage.CO8",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Verify storage accounts use the authorized minimum TLS version (e.g., by using Azure built-in policy \"Storage accounts should have the specified minimum TLS version\" in Audit mode).",
@@ -6619,7 +6627,7 @@
       "coso": "Detective",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Monitor for storage accounts that allow Shared Key authorization (e.g., by monitoring storage account configuration where \"properties.allowSharedKeyAccess == true\" in Audit mode).",
@@ -6706,7 +6714,7 @@
       "coso": "Detective",
       "nist_csf": "Detect",
       "objective": "Storage.CO4",
-      "retired": "false",
+      "retired": false,
       "assured_by": "",
       "depends_on": "",
       "description": "Monitor for storage accounts without a SAS expiration policy (e.g., by monitoring storage account configuration where \"properties.sasPolicy.sasExpirationPeriod\" is not configured in Audit mode).",
@@ -6792,6 +6800,7 @@
       "iam_permission": "Microsoft.Storage/register/action",
       "event_name": "Microsoft.Storage/register/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 1
     },
     "Storage.A2": {
@@ -6803,6 +6812,7 @@
       "iam_permission": "Microsoft.Storage/locations/deleteVirtualNetworkOrSubnets/action",
       "event_name": "Microsoft.Storage/locations/deleteVirtualNetworkOrSubnets/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 2
     },
     "Storage.A3": {
@@ -6814,6 +6824,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 3
     },
     "Storage.A4": {
@@ -6825,6 +6836,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 4
     },
     "Storage.A5": {
@@ -6836,6 +6848,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 5
     },
     "Storage.A6": {
@@ -6847,6 +6860,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 6
     },
     "Storage.A7": {
@@ -6858,6 +6872,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 7
     },
     "Storage.A8": {
@@ -6869,6 +6884,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 8
     },
     "Storage.A9": {
@@ -6880,6 +6896,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 9
     },
     "Storage.A10": {
@@ -6891,6 +6908,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/deleteblobVersion/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/deleteblobVersion/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 10
     },
     "Storage.A11": {
@@ -6902,6 +6920,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/permanentDelete/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/permanentDelete/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 11
     },
     "Storage.A12": {
@@ -6913,6 +6932,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/add/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 12
     },
     "Storage.A13": {
@@ -6924,6 +6944,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 13
     },
     "Storage.A14": {
@@ -6935,6 +6956,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/move/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 14
     },
     "Storage.A15": {
@@ -6946,6 +6968,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/manageOwnership/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/manageOwnership/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 15
     },
     "Storage.A16": {
@@ -6957,6 +6980,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/modifyPermissions/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/modifyPermissions/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 16
     },
     "Storage.A17": {
@@ -6968,6 +6992,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/runAsSuperUser/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/runAsSuperUser/action",
       "stage": "-",
+      "retired": false,
       "action_id_int": 17
     },
     "Storage.A18": {
@@ -6979,6 +7004,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/migrate/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/migrate/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 18
     },
     "Storage.A19": {
@@ -6990,6 +7016,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 19
     },
     "Storage.A20": {
@@ -7001,6 +7028,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/delete",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 20
     },
     "Storage.A21": {
@@ -7012,6 +7040,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 21
     },
     "Storage.A22": {
@@ -7023,6 +7052,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 22
     },
     "Storage.A23": {
@@ -7034,6 +7064,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/lease/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/lease/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 23
     },
     "Storage.A24": {
@@ -7045,6 +7076,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 24
     },
     "Storage.A25": {
@@ -7056,6 +7088,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/clearLegalHold/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/clearLegalHold/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 25
     },
     "Storage.A26": {
@@ -7067,6 +7100,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/setLegalHold/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/setLegalHold/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 26
     },
     "Storage.A27": {
@@ -7078,6 +7112,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/extend/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/extend/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 27
     },
     "Storage.A28": {
@@ -7089,6 +7124,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/delete",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 28
     },
     "Storage.A29": {
@@ -7100,6 +7136,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 29
     },
     "Storage.A30": {
@@ -7111,6 +7148,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/lock/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/lock/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 30
     },
     "Storage.A31": {
@@ -7122,6 +7160,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/immutabilityPolicies/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 31
     },
     "Storage.A32": {
@@ -7133,6 +7172,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 32
     },
     "Storage.A33": {
@@ -7144,6 +7184,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 33
     },
     "Storage.A34": {
@@ -7155,6 +7196,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/write",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 34
     },
     "Storage.A35": {
@@ -7166,6 +7208,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 35
     },
     "Storage.A36": {
@@ -7177,6 +7220,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 36
     },
     "Storage.A37": {
@@ -7188,6 +7232,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 37
     },
     "Storage.A38": {
@@ -7199,6 +7244,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/delete",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 38
     },
     "Storage.A39": {
@@ -7210,6 +7256,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 39
     },
     "Storage.A40": {
@@ -7221,6 +7268,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/write",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 40
     },
     "Storage.A41": {
@@ -7232,6 +7280,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 41
     },
     "Storage.A42": {
@@ -7243,6 +7292,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 42
     },
     "Storage.A43": {
@@ -7254,6 +7304,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action",
       "stage": "-",
+      "retired": false,
       "action_id_int": 43
     },
     "Storage.A44": {
@@ -7265,6 +7316,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/updateInternalProperties/action",
       "event_name": "Microsoft.Storage/storageAccounts/updateInternalProperties/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 44
     },
     "Storage.A45": {
@@ -7276,6 +7328,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/hnsonmigration/action",
       "event_name": "Microsoft.Storage/storageAccounts/hnsonmigration/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 45
     },
     "Storage.A46": {
@@ -7287,6 +7340,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/hnsonmigration/action",
       "event_name": "Microsoft.Storage/storageAccounts/hnsonmigration/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 46
     },
     "Storage.A47": {
@@ -7298,6 +7352,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/restoreBlobRanges/action",
       "event_name": "Microsoft.Storage/storageAccounts/restoreBlobRanges/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 47
     },
     "Storage.A48": {
@@ -7309,6 +7364,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",
       "event_name": "Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 48
     },
     "Storage.A49": {
@@ -7320,6 +7376,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/failover/action",
       "event_name": "Microsoft.Storage/storageAccounts/failover/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 49
     },
     "Storage.A50": {
@@ -7331,6 +7388,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/listKeys/action",
       "event_name": "Microsoft.Storage/storageAccounts/listKeys/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 50
     },
     "Storage.A51": {
@@ -7342,6 +7400,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/regenerateKey/action",
       "event_name": "Microsoft.Storage/storageAccounts/regenerateKey/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 51
     },
     "Storage.A52": {
@@ -7353,6 +7412,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/rotateKey/action",
       "event_name": "Microsoft.Storage/storageAccounts/rotateKey/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 52
     },
     "Storage.A53": {
@@ -7364,6 +7424,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/revokeUserDelegationKeys/action",
       "event_name": "Microsoft.Storage/storageAccounts/revokeUserDelegationKeys/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 53
     },
     "Storage.A54": {
@@ -7375,6 +7436,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/delete",
       "event_name": "Microsoft.Storage/storageAccounts/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 54
     },
     "Storage.A55": {
@@ -7386,6 +7448,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 55
     },
     "Storage.A56": {
@@ -7397,6 +7460,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/ListAccountSas/action",
       "event_name": "Microsoft.Storage/storageAccounts/ListAccountSas/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 56
     },
     "Storage.A57": {
@@ -7408,6 +7472,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/ListServiceSas/action",
       "event_name": "Microsoft.Storage/storageAccounts/ListServiceSas/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 57
     },
     "Storage.A58": {
@@ -7419,6 +7484,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/write",
       "event_name": "Microsoft.Storage/storageAccounts/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 58
     },
     "Storage.A59": {
@@ -7430,6 +7496,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/services/diagnosticsettings/write",
       "event_name": "Microsoft.Storage/storageAccounts/services/diagnosticsettings/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 59
     },
     "Storage.A60": {
@@ -7441,6 +7508,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/providers/Microsoft.Insights/metricDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 60
     },
     "Storage.A61": {
@@ -7452,6 +7520,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/providers/Microsoft.Insights/diagnosticsettings/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 61
     },
     "Storage.A62": {
@@ -7463,6 +7532,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/providers/Microsoft.Insights/diagnosticsettings/write",
       "event_name": "Microsoft.Storage/storageAccounts/providers/Microsoft.Insights/diagnosticsettings/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 62
     },
     "Storage.A63": {
@@ -7474,6 +7544,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/providers/Microsoft.Insights/metricDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 63
     },
     "Storage.A64": {
@@ -7485,6 +7556,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/providers/Microsoft.Insights/diagnosticsettings/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 64
     },
     "Storage.A65": {
@@ -7496,6 +7568,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 65
     },
     "Storage.A66": {
@@ -7507,6 +7580,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/providers/Microsoft.Insights/metricDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 66
     },
     "Storage.A67": {
@@ -7518,6 +7592,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/providers/Microsoft.Insights/diagnosticsettings/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 67
     },
     "Storage.A68": {
@@ -7529,6 +7604,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 68
     },
     "Storage.A69": {
@@ -7540,6 +7616,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/providers/Microsoft.Insights/metricDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 69
     },
     "Storage.A70": {
@@ -7551,6 +7628,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/providers/Microsoft.Insights/diagnosticsettings/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 70
     },
     "Storage.A71": {
@@ -7562,6 +7640,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 71
     },
     "Storage.A72": {
@@ -7573,6 +7652,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/providers/Microsoft.Insights/metricDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 72
     },
     "Storage.A73": {
@@ -7584,6 +7664,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/providers/Microsoft.Insights/diagnosticsettings/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 73
     },
     "Storage.A74": {
@@ -7595,6 +7676,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/providers/Microsoft.Insights/diagnosticsettings/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 74
     },
     "Storage.A75": {
@@ -7606,6 +7688,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/providers/Microsoft.Insights/logDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 75
     },
     "Storage.A76": {
@@ -7617,6 +7700,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/providers/Microsoft.Insights/logDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 76
     },
     "Storage.A77": {
@@ -7628,6 +7712,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/providers/Microsoft.Insights/logDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 77
     },
     "Storage.A78": {
@@ -7639,6 +7724,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/providers/Microsoft.Insights/logDefinitions/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 78
     },
     "Storage.A79": {
@@ -7650,6 +7736,7 @@
       "iam_permission": "Microsoft.Storage/skus/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 79
     },
     "Storage.A80": {
@@ -7661,6 +7748,7 @@
       "iam_permission": "Microsoft.Storage/operations/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 80
     },
     "Storage.A81": {
@@ -7672,6 +7760,7 @@
       "iam_permission": "Microsoft.Storage/checkNameAvailability/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 81
     },
     "Storage.A82": {
@@ -7683,6 +7772,7 @@
       "iam_permission": "Microsoft.Storage/locations/usages/readMicrosoft.Storage/locations/usages/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 82
     },
     "Storage.A83": {
@@ -7694,6 +7784,7 @@
       "iam_permission": "Microsoft.Storage/usages/read",
       "event_name": "-",
       "stage": "stable-2018-02-01",
+      "retired": false,
       "action_id_int": 83
     },
     "Storage.A84": {
@@ -7705,6 +7796,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read",
       "event_name": "-",
       "stage": "stable-2018-02-02",
+      "retired": false,
       "action_id_int": 84
     },
     "Storage.A85": {
@@ -7716,6 +7808,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write",
       "stage": "stable-2018-02-03",
+      "retired": false,
       "action_id_int": 85
     },
     "Storage.A86": {
@@ -7727,6 +7820,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/managementPolicies/delete",
       "event_name": "Microsoft.Storage/storageAccounts/managementPolicies/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 86
     },
     "Storage.A87": {
@@ -7738,6 +7832,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/managementPolicies/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 87
     },
     "Storage.A88": {
@@ -7749,6 +7844,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/managementPolicies/write",
       "event_name": "Microsoft.Storage/storageAccounts/managementPolicies/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 88
     },
     "Storage.A89": {
@@ -7760,6 +7856,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/action",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/shares/action",
       "stage": "-",
+      "retired": false,
       "action_id_int": 89
     },
     "Storage.A90": {
@@ -7771,6 +7868,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 90
     },
     "Storage.A91": {
@@ -7782,6 +7880,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/write",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 91
     },
     "Storage.A92": {
@@ -7793,6 +7892,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 92
     },
     "Storage.A93": {
@@ -7804,6 +7904,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 93
     },
     "Storage.A94": {
@@ -7815,6 +7916,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 94
     },
     "Storage.A95": {
@@ -7826,6 +7928,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/write",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 95
     },
     "Storage.A96": {
@@ -7837,6 +7940,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 96
     },
     "Storage.A97": {
@@ -7848,6 +7952,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/write",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 97
     },
     "Storage.A98": {
@@ -7859,6 +7964,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/delete",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 98
     },
     "Storage.A99": {
@@ -7870,6 +7976,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/modifyPermissions/action",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/modifyPermissions/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 99
     },
     "Storage.A100": {
@@ -7881,6 +7988,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/actassuperuser/action",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/actassuperuser/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 100
     },
     "Storage.A101": {
@@ -7892,6 +8000,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 101
     },
     "Storage.A102": {
@@ -7903,6 +8012,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/delete",
       "event_name": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/delete",
       "stage": "-",
+      "retired": false,
       "action_id_int": 102
     },
     "Storage.A103": {
@@ -7914,6 +8024,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/write",
       "event_name": "Microsoft.Storage/storageAccounts/privateEndpointConnectionProxies/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 103
     },
     "Storage.A104": {
@@ -7925,6 +8036,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateEndpointConnections/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 104
     },
     "Storage.A105": {
@@ -7936,6 +8048,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateEndpointConnections/delete",
       "event_name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 105
     },
     "Storage.A106": {
@@ -7947,6 +8060,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateEndpointConnections/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 106
     },
     "Storage.A107": {
@@ -7958,6 +8072,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateEndpointConnections/write",
       "event_name": "Microsoft.Storage/storageAccounts/privateEndpointConnections/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 107
     },
     "Storage.A108": {
@@ -7969,6 +8084,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/privateLinkResources/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 108
     },
     "Storage.A109": {
@@ -7980,6 +8096,7 @@
       "iam_permission": "Microsoft.Storage/locations/checkNameAvailability/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 109
     },
     "Storage.A110": {
@@ -7991,6 +8108,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/delete",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/shares/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 110
     },
     "Storage.A111": {
@@ -8002,6 +8120,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 111
     },
     "Storage.A113": {
@@ -8013,6 +8132,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/write",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/shares/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 113
     },
     "Storage.A114": {
@@ -8024,6 +8144,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/encryptionScopes/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 114
     },
     "Storage.A115": {
@@ -8035,6 +8156,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/encryptionScopes/write",
       "event_name": "Microsoft.Storage/storageAccounts/encryptionScopes/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 115
     },
     "Storage.A116": {
@@ -8046,6 +8168,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/delete",
       "event_name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 116
     },
     "Storage.A117": {
@@ -8057,6 +8180,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 117
     },
     "Storage.A118": {
@@ -8068,6 +8192,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 118
     },
     "Storage.A119": {
@@ -8079,6 +8204,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/write",
       "event_name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 119
     },
     "Storage.A120": {
@@ -8090,6 +8216,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/dataSharePolicies/delete",
       "event_name": "Microsoft.Storage/storageAccounts/dataSharePolicies/delete",
       "stage": "-",
+      "retired": false,
       "action_id_int": 120
     },
     "Storage.A121": {
@@ -8101,6 +8228,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/dataSharePolicies/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 121
     },
     "Storage.A122": {
@@ -8112,6 +8240,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/dataSharePolicies/write",
       "event_name": "Microsoft.Storage/storageAccounts/dataSharePolicies/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 122
     },
     "Storage.A123": {
@@ -8123,6 +8252,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/localUsers/delete",
       "event_name": "Microsoft.Storage/storageAccounts/localUsers/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 123
     },
     "Storage.A124": {
@@ -8134,6 +8264,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/localUsers/regeneratePassword/action",
       "event_name": "Microsoft.Storage/storageAccounts/localUsers/regeneratePassword/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 124
     },
     "Storage.A125": {
@@ -8145,6 +8276,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/localUsers/listKeys/action",
       "event_name": "Microsoft.Storage/storageAccounts/localUsers/listKeys/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 125
     },
     "Storage.A126": {
@@ -8156,6 +8288,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/localUsers/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 126
     },
     "Storage.A127": {
@@ -8167,6 +8300,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/localUsers/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 127
     },
     "Storage.A128": {
@@ -8178,6 +8312,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/localUsers/write",
       "event_name": "Microsoft.Storage/storageAccounts/localUsers/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 128
     },
     "Storage.A129": {
@@ -8189,6 +8324,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 129
     },
     "Storage.A130": {
@@ -8200,6 +8336,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/write",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 130
     },
     "Storage.A131": {
@@ -8211,6 +8348,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/delete",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 131
     },
     "Storage.A132": {
@@ -8222,6 +8360,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/inventoryPolicies/delete",
       "event_name": "Microsoft.Storage/storageAccounts/inventoryPolicies/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 132
     },
     "Storage.A133": {
@@ -8233,6 +8372,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/inventoryPolicies/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 133
     },
     "Storage.A134": {
@@ -8244,6 +8384,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/inventoryPolicies/write",
       "event_name": "Microsoft.Storage/storageAccounts/inventoryPolicies/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 134
     },
     "Storage.A135": {
@@ -8255,6 +8396,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/accountLocks/deleteLock/action",
       "event_name": "Microsoft.Storage/storageAccounts/accountLocks/deleteLock/action",
       "stage": "-",
+      "retired": false,
       "action_id_int": 135
     },
     "Storage.A136": {
@@ -8266,6 +8408,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/accountLocks/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 136
     },
     "Storage.A137": {
@@ -8277,6 +8420,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/accountLocks/write",
       "event_name": "Microsoft.Storage/storageAccounts/accountLocks/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 137
     },
     "Storage.A138": {
@@ -8288,6 +8432,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/accountLocks/delete",
       "event_name": "Microsoft.Storage/storageAccounts/accountLocks/delete",
       "stage": "-",
+      "retired": false,
       "action_id_int": 138
     },
     "Storage.A139": {
@@ -8299,6 +8444,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/consumerdataSharePolicies/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 139
     },
     "Storage.A140": {
@@ -8310,6 +8456,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/consumerdataSharePolicies/write",
       "event_name": "Microsoft.Storage/storageAccounts/consumerdataSharePolicies/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 140
     },
     "Storage.A141": {
@@ -8321,6 +8468,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 141
     },
     "Storage.A142": {
@@ -8332,6 +8480,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/write",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 142
     },
     "Storage.A143": {
@@ -8343,6 +8492,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/delete",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/delete",
       "stage": "-",
+      "retired": false,
       "action_id_int": 143
     },
     "Storage.A144": {
@@ -8354,6 +8504,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/add/action",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/add/action",
       "stage": "-",
+      "retired": false,
       "action_id_int": 144
     },
     "Storage.A145": {
@@ -8365,6 +8516,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/update/action",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/entities/update/action",
       "stage": "-",
+      "retired": false,
       "action_id_int": 145
     },
     "Storage.A146": {
@@ -8376,6 +8528,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/immutableStorage/runAsSuperUser/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/immutableStorage/runAsSuperUser/action",
       "stage": "-",
+      "retired": false,
       "action_id_int": 146
     },
     "Storage.A147": {
@@ -8387,6 +8540,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/restorePointMarkers/write",
       "event_name": "Microsoft.Storage/storageAccounts/objectReplicationPolicies/restorePointMarkers/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 147
     },
     "Storage.A148": {
@@ -8398,6 +8552,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/restorePoints/delete",
       "event_name": "Microsoft.Storage/storageAccounts/restorePoints/delete",
       "stage": "-",
+      "retired": false,
       "action_id_int": 148
     },
     "Storage.A149": {
@@ -8409,6 +8564,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/restorePoints/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 149
     },
     "Storage.A150": {
@@ -8420,6 +8576,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/restorePoints/read",
       "event_name": "-",
       "stage": "-",
+      "retired": false,
       "action_id_int": 150
     },
     "Storage.A151": {
@@ -8431,6 +8588,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/accountMigrations/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 151
     },
     "Storage.A152": {
@@ -8442,6 +8600,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/accountMigrations/write",
       "event_name": "Microsoft.Storage/storageAccounts/accountMigrations/write",
       "stage": "-",
+      "retired": false,
       "action_id_int": 152
     },
     "Storage.A153": {
@@ -8453,6 +8612,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 153
     },
     "Storage.A154": {
@@ -8464,6 +8624,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 154
     },
     "Storage.A155": {
@@ -8475,6 +8636,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "stage": "stable-2025-05-05",
+      "retired": false,
       "action_id_int": 155
     },
     "Storage.A156": {
@@ -8486,6 +8648,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
       "event_name": "-",
       "stage": "stable-2025-05-05",
+      "retired": false,
       "action_id_int": 156
     },
     "Storage.A157": {
@@ -8497,6 +8660,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 157
     },
     "Storage.A158": {
@@ -8508,6 +8672,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/delete",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 158
     },
     "Storage.A159": {
@@ -8519,6 +8684,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "stage": "stable-2025-05-05",
+      "retired": false,
       "action_id_int": 159
     },
     "Storage.A160": {
@@ -8530,6 +8696,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
       "stage": "stable-2025-05-05",
+      "retired": false,
       "action_id_int": 160
     },
     "Storage.A161": {
@@ -8541,6 +8708,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/lease/action",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/lease/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 161
     },
     "Storage.A162": {
@@ -8552,6 +8720,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
       "event_name": "-",
       "stage": "stable-2025-01-05",
+      "retired": false,
       "action_id_int": 162
     },
     "Storage.A163": {
@@ -8563,6 +8732,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
       "event_name": "-",
       "stage": "stable-2025-01-05",
+      "retired": false,
       "action_id_int": 163
     },
     "Storage.A164": {
@@ -8574,6 +8744,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
       "event_name": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete",
       "stage": "stable-2025-01-05",
+      "retired": false,
       "action_id_int": 164
     },
     "Storage.A165": {
@@ -8585,6 +8756,7 @@
       "iam_permission": "Microsoft.Storage/usages/read",
       "event_name": "-",
       "stage": "stable-2018-02-01",
+      "retired": false,
       "action_id_int": 165
     },
     "Storage.A166": {
@@ -8596,6 +8768,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 166
     },
     "Storage.A167": {
@@ -8607,6 +8780,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/write",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/shares/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 167
     },
     "Storage.A168": {
@@ -8618,6 +8792,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 168
     },
     "Storage.A169": {
@@ -8629,6 +8804,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/restore/action",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/shares/restore/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 169
     },
     "Storage.A170": {
@@ -8640,6 +8816,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/lease/action",
       "event_name": "Microsoft.Storage/storageAccounts/fileServices/shares/lease/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 170
     },
     "Storage.A171": {
@@ -8651,6 +8828,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 171
     },
     "Storage.A172": {
@@ -8662,6 +8840,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 172
     },
     "Storage.A173": {
@@ -8673,6 +8852,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/reconcile/action",
       "event_name": "Microsoft.Storage/storageAccounts/networkSecurityPerimeterConfigurations/reconcile/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 173
     },
     "Storage.A174": {
@@ -8684,6 +8864,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 174
     },
     "Storage.A175": {
@@ -8695,6 +8876,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 175
     },
     "Storage.A176": {
@@ -8706,6 +8888,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 176
     },
     "Storage.A177": {
@@ -8717,6 +8900,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "event_name": "Microsoft.Storage/storageAccounts/queueServices/queues/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 177
     },
     "Storage.A178": {
@@ -8728,6 +8912,7 @@
       "iam_permission": "Microsoft.Storage/deletedAccounts/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 178
     },
     "Storage.A179": {
@@ -8739,6 +8924,7 @@
       "iam_permission": "Microsoft.Storage/locations/deletedAccounts/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 179
     },
     "Storage.A180": {
@@ -8750,6 +8936,7 @@
       "iam_permission": "Microsoft.Storage/locations/usages/read",
       "event_name": "-",
       "stage": "stable-2018-02-01",
+      "retired": false,
       "action_id_int": 180
     },
     "Storage.A181": {
@@ -8761,6 +8948,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 181
     },
     "Storage.A182": {
@@ -8772,6 +8960,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 182
     },
     "Storage.A183": {
@@ -8783,6 +8972,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/encryptionScopes/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 183
     },
     "Storage.A184": {
@@ -8794,6 +8984,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/encryptionScopes/write",
       "event_name": "Microsoft.Storage/storageAccounts/encryptionScopes/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 184
     },
     "Storage.A185": {
@@ -8805,6 +8996,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/inventoryPolicies/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 185
     },
     "Storage.A186": {
@@ -8816,6 +9008,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/aborthnsonmigration/action",
       "event_name": "Microsoft.Storage/storageAccounts/aborthnsonmigration/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 186
     },
     "Storage.A187": {
@@ -8827,6 +9020,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/startAccountMigration/action",
       "event_name": "Microsoft.Storage/storageAccounts/startAccountMigration/action",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 187
     },
     "Storage.A188": {
@@ -8838,6 +9032,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/storageTaskAssignments/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 188
     },
     "Storage.A189": {
@@ -8849,6 +9044,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/storageTaskAssignments/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 189
     },
     "Storage.A190": {
@@ -8860,6 +9056,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/storageTaskAssignments/write",
       "event_name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 190
     },
     "Storage.A191": {
@@ -8871,6 +9068,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/storageTaskAssignments/write",
       "event_name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 191
     },
     "Storage.A192": {
@@ -8882,6 +9080,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/storageTaskAssignments/delete",
       "event_name": "Microsoft.Storage/storageAccounts/storageTaskAssignments/delete",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 192
     },
     "Storage.A193": {
@@ -8893,6 +9092,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/reports/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 193
     },
     "Storage.A194": {
@@ -8904,6 +9104,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/storageTaskAssignments/reports/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 194
     },
     "Storage.A195": {
@@ -8915,6 +9116,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 195
     },
     "Storage.A196": {
@@ -8926,6 +9128,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/read",
       "event_name": "-",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 196
     },
     "Storage.A197": {
@@ -8937,6 +9140,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/write",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 197
     },
     "Storage.A198": {
@@ -8948,6 +9152,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/tableServices/tables/write",
       "event_name": "Microsoft.Storage/storageAccounts/tableServices/tables/write",
       "stage": "stable-2023-05-01",
+      "retired": false,
       "action_id_int": 198
     },
     "Storage.A199": {
@@ -8959,6 +9164,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/failover/action",
       "event_name": "Microsoft.Storage/storageAccounts/failover/action",
       "stage": "stable-2024-01-01",
+      "retired": false,
       "action_id_int": 199
     },
     "Storage.A200": {
@@ -8970,6 +9176,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/connectors/delete",
       "event_name": "-",
       "stage": "stable-2024-01-02",
+      "retired": false,
       "action_id_int": 200
     },
     "Storage.A201": {
@@ -8981,6 +9188,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/connectors/read",
       "event_name": "-",
       "stage": "stable-2024-01-03",
+      "retired": false,
       "action_id_int": 201
     },
     "Storage.A202": {
@@ -8992,6 +9200,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/connectors/testExistingConnection/action",
       "event_name": "-",
       "stage": "stable-2024-01-04",
+      "retired": false,
       "action_id_int": 202
     },
     "Storage.A203": {
@@ -9003,6 +9212,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/connectors/write",
       "event_name": "-",
       "stage": "stable-2024-01-05",
+      "retired": false,
       "action_id_int": 203
     },
     "Storage.A204": {
@@ -9014,6 +9224,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/dataShares/delete",
       "event_name": "-",
       "stage": "stable-2024-01-06",
+      "retired": false,
       "action_id_int": 204
     },
     "Storage.A205": {
@@ -9025,6 +9236,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/dataShares/read",
       "event_name": "-",
       "stage": "stable-2024-01-07",
+      "retired": false,
       "action_id_int": 205
     },
     "Storage.A206": {
@@ -9036,6 +9248,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/dataShares/write",
       "event_name": "-",
       "stage": "stable-2024-01-08",
+      "retired": false,
       "action_id_int": 206
     },
     "Storage.A207": {
@@ -9047,6 +9260,7 @@
       "iam_permission": "Microsoft.Storage/storageAccounts/fileServices/shares/revert/action",
       "event_name": "-",
       "stage": "stable-2024-01-09",
+      "retired": false,
       "action_id_int": 207
     }
   },
