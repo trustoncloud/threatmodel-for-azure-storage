@@ -1,0 +1,16 @@
+Deny by default and list only authorized ranges in `ip_rules`, or add a range to `authorized_ips` once approved:
+
+```hcl
+resource "azurerm_storage_account" "example" {
+  network_rules {
+    default_action = "Deny"
+    ip_rules       = ["203.0.113.0/24"]
+  }
+}
+```
+
+## References
+
+- [azurerm_storage_account (hashicorp/azurerm 5.10.0)](https://registry.terraform.io/providers/hashicorp/azurerm/5.10.0/docs/resources/storage_account)
+
+Checked 2026-10-23 against hashicorp/azurerm 4.81.0 and 5.10.0: resources, arguments and links.

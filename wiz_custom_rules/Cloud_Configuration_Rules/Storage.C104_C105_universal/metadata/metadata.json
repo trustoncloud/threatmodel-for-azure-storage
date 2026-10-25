@@ -1,0 +1,29 @@
+{
+  "name": "Storage.C104_C105 - malware_scanning_enabled (universal)",
+  "enabled": true,
+  "function_as_control": true,
+  "severity": "MEDIUM",
+  "target_native_types": [],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC105"
+    },
+    {
+      "key": "mode",
+      "value": "universal"
+    },
+    {
+      "key": "matcher",
+      "value": "terraform"
+    },
+    {
+      "key": "pairedControlId",
+      "value": "StorageC104"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO17"
+    }
+  ]
+}

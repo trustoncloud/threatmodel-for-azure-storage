@@ -1,0 +1,31 @@
+{
+  "name": "Storage.C99_C102 - file_share_smb21_required (denylist)",
+  "enabled": false,
+  "function_as_control": true,
+  "severity": "MEDIUM",
+  "target_native_types": [
+    "Microsoft.Storage/storageAccounts"
+  ],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC102"
+    },
+    {
+      "key": "mode",
+      "value": "denylist"
+    },
+    {
+      "key": "matcher",
+      "value": "both"
+    },
+    {
+      "key": "pairedControlId",
+      "value": "StorageC99"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO8"
+    }
+  ]
+}

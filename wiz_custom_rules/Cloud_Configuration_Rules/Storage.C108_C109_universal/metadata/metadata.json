@@ -1,0 +1,29 @@
+{
+  "name": "Storage.C108_C109 - storage_account_lock_required (universal)",
+  "enabled": true,
+  "function_as_control": true,
+  "severity": "HIGH",
+  "target_native_types": [],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC109"
+    },
+    {
+      "key": "mode",
+      "value": "universal"
+    },
+    {
+      "key": "matcher",
+      "value": "terraform"
+    },
+    {
+      "key": "pairedControlId",
+      "value": "StorageC108"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO24"
+    }
+  ]
+}
