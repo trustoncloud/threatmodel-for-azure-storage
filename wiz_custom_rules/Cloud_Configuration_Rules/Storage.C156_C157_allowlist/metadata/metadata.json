@@ -1,0 +1,29 @@
+{
+  "name": "Storage.C156_C157 - authorized_stored_access_policy (allowlist)",
+  "enabled": false,
+  "function_as_control": true,
+  "severity": "LOW",
+  "target_native_types": [],
+  "tags": [
+    {
+      "key": "controlId",
+      "value": "StorageC157"
+    },
+    {
+      "key": "mode",
+      "value": "allowlist"
+    },
+    {
+      "key": "matcher",
+      "value": "terraform"
+    },
+    {
+      "key": "pairedControlId",
+      "value": "StorageC156"
+    },
+    {
+      "key": "objective",
+      "value": "StorageCO22"
+    }
+  ]
+}
