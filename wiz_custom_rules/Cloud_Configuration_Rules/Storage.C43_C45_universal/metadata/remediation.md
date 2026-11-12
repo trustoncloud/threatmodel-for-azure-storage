@@ -1,6 +1,6 @@
 # Remediation
 
-The account in the finding admits traffic by IP rule, or its firewall does not deny by default. Remove every IP rule and reach the account through private endpoints or virtual network rules instead:
+The account in the finding admits traffic by IP rule, or its firewall does not deny by default. An account with no firewall settings allows every network. Remove every IP rule and reach the account through private endpoints or virtual network rules instead:
 
 ```bash
 az storage account network-rule remove --account-name <account-name> --resource-group <resource-group> --ip-address <ip-range>
@@ -8,6 +8,8 @@ az storage account update --name <account-name> --resource-group <resource-group
 ```
 
 Replace `<account-name>` and `<resource-group>` with the storage account in the finding, and `<ip-range>` with each range the account lists.
+
+This check covers the default action and the IP rules only. It does not review virtual network rules or private endpoints; Storage.C169 reviews virtual network rules.
 
 ## References
 

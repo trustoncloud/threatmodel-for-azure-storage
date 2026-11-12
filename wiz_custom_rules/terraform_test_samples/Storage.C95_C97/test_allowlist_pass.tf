@@ -27,3 +27,36 @@ resource "azurerm_storage_account" "no_cors" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
+
+# Queue and table CORS on the standalone resources, fully authorized
+resource "azurerm_storage_account" "compliant_queue_table" {
+  name                     = "compliantqueuetable"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_storage_account_queue_properties" "compliant_queue_table" {
+  storage_account_id = azurerm_storage_account.compliant_queue_table.id
+
+  cors_rule {
+    allowed_origins    = ["https://myapp.contoso.com"]
+    allowed_methods    = ["GET", "PUT"]
+    allowed_headers    = ["Content-Type"]
+    exposed_headers    = ["x-ms-request-id"]
+    max_age_in_seconds = 200
+  }
+}
+
+resource "azurerm_storage_account_table_properties" "compliant_queue_table" {
+  storage_account_id = azurerm_storage_account.compliant_queue_table.id
+
+  cors_rule {
+    allowed_origins    = ["https://api.contoso.com"]
+    allowed_methods    = ["GET"]
+    allowed_headers    = ["Content-Type"]
+    exposed_headers    = ["x-ms-request-id"]
+    max_age_in_seconds = 60
+  }
+}

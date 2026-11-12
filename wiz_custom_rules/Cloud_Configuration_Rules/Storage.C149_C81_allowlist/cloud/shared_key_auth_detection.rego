@@ -4,6 +4,10 @@ package wiz
 # Specific accounts identified as hosting sensitive/authorized data
 required_secure_accounts := {"examplefinancearchive", "exampleauditlogs", "examplecustomerdata"}
 
+# Also require Microsoft Entra ID (OAuth) as the default authorization in the
+# portal. Shared Key must be off whatever this is set to.
+require_oauth_default := true
+
 # --- Logic ---
 default result := "pass"
 
@@ -11,9 +15,17 @@ is_required_account {
     required_secure_accounts[input.name]
 }
 
+oauth_default_ok {
+    not require_oauth_default
+}
+
+oauth_default_ok {
+    input.properties.defaultToOAuthAuthentication == true
+}
+
 is_compliant {
     input.properties.allowSharedKeyAccess == false
-    input.properties.defaultToOAuthAuthentication == true
+    oauth_default_ok
 }
 
 # Logic Chain
@@ -33,4 +45,4 @@ currentConfiguration := sprintf("Account '%v' security: SharedKey=%v, OAuthDefau
     object.get(object.get(input, "properties", {}), "allowSharedKeyAccess", true),
     object.get(object.get(input, "properties", {}), "defaultToOAuthAuthentication", false)
 ])
-expectedConfiguration := "High-value storage accounts must strictly disable Shared Keys and enforce OAuth defaults."
+expectedConfiguration := sprintf("Required accounts disable Shared Key; OAuth as the portal default required: %v", [require_oauth_default])

@@ -1,5 +1,5 @@
 # This is testing Storage.C45 (storage_firewall_restricted) - allowlist variant
-# Expected outcome: VIOLATING (5 findings)
+# Expected outcome: VIOLATING (6 findings)
 
 # Test case 1: Inline firewall open (default_action = Allow) [Finding 1]
 resource "azurerm_storage_account" "violating_firewall_inline_open" {
@@ -62,4 +62,26 @@ resource "azurerm_storage_account" "violating_firewall_absence" {
   location                 = "eastus"
   account_tier             = "Standard"
   account_replication_type = "LRS"
+}
+
+# No firewall; the only standalone rules belong to the account next door: 1 finding
+resource "azurerm_storage_account" "fw_lookalike" {
+  name                     = "fwlookalikeall"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_storage_account" "fw_lookalike_2" {
+  name                     = "fwlookalikeall2"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_storage_account_network_rules" "fw_lookalike_2" {
+  storage_account_id = azurerm_storage_account.fw_lookalike_2.id
+  default_action     = "Deny"
 }

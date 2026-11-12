@@ -1,12 +1,14 @@
 # Remediation
 
-The account in the finding allows an SMB version listed in `forbidden_versions`. Allow only permitted versions:
+The account in the finding allows an SMB version listed in `forbidden_versions`. An empty SMB versions setting is Azure's default, which allows every version. Allow only permitted versions:
 
 ```bash
 az storage account file-service-properties update --account-name <account-name> --resource-group <resource-group> --versions "SMB3.0;SMB3.1.1"
 ```
 
 Replace `<account-name>` and `<resource-group>` with the storage account in the finding.
+
+NFS is set on each file share, and the storage account data this check reads does not list shares, so NFS shares are not covered here; review them in the account's file shares.
 
 ## References
 

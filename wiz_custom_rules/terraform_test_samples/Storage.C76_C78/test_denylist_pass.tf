@@ -9,3 +9,21 @@ resource "azurerm_storage_account" "compliant_c78_denylist" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
+
+# Test case 2: display name of a region that is not forbidden ("West Europe")
+resource "azurerm_storage_account" "compliant_c78_denylist_display" {
+  name                     = "compliantregdenylist2"
+  resource_group_name      = "rg-test"
+  location                 = "West Europe"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+# Test case 3: lookalike of a forbidden region is not forbidden ("brazilsoutheast")
+resource "azurerm_storage_account" "compliant_c78_denylist_lookalike" {
+  name                     = "compliantregdenylist3"
+  resource_group_name      = "rg-test"
+  location                 = "Brazil Southeast"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}

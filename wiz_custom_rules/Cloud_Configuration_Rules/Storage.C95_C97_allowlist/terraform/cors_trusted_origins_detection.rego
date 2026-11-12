@@ -9,114 +9,79 @@ allowed_headers := {"Content-Type", "x-ms-blob-content-type"}
 allowed_exposed_headers := {"x-ms-request-id"}
 max_authorized_age := 200
 
-# CORS rules live in three per-service blocks on azurerm_storage_account.
-cors_service_blocks := ["blob_properties", "queue_properties", "share_properties"]
+# --- Helpers ---
+# Service blocks on azurerm_storage_account that hold cors_rule blocks.
+# queue_properties exists only in azurerm 4.x.
+tf_account_cors_blocks := ["blob_properties", "queue_properties", "share_properties"]
 
-# --- Logic ---
-# One block per CORS field; each iterates all three service blocks via `svc`.
-# cors_rule is a repeatable block: getArray normalizes Wiz's object-or-list
-# rendering to a list so a single cors_rule block is still iterated.
+# Standalone resources that hold the queue and table service CORS rules.
+tf_standalone_cors_types := ["azurerm_storage_account_queue_properties", "azurerm_storage_account_table_properties"]
 
-# Unauthorized origin
-WizPolicy[result] {
-    document := input.document[i]
+# Every cors_rule in a document, with the resource that declares it. cors_rule
+# is repeatable: getArray normalizes the object-or-list rendering to a list.
+tf_cors_rules(document) := {entry |
     resource := document.resource.azurerm_storage_account[name]
-    svc := cors_service_blocks[_]
+    svc := tf_account_cors_blocks[_]
     block := terraLib.getValueArrayOrObject(object.get(resource, svc, {}))
     rule := terraLib.getArray(block.cors_rule)[ridx]
+    entry := {
+        "type": "azurerm_storage_account",
+        "name": name,
+        "resource": resource,
+        "path": sprintf("%s.cors_rule[%d]", [svc, ridx]),
+        "rule": rule,
+    }
+} | {entry |
+    rtype := tf_standalone_cors_types[_]
+    resource := document.resource[rtype][name]
+    rule := terraLib.getArray(resource.cors_rule)[ridx]
+    entry := {
+        "type": rtype,
+        "name": name,
+        "resource": resource,
+        "path": sprintf("cors_rule[%d]", [ridx]),
+        "rule": rule,
+    }
+}
+
+# Each CORS field outside its authorized set, as [field path, expected, actual].
+tf_cors_violations(rule) := {v |
     origin := rule.allowed_origins[oidx]
     not allowed_origins[origin]
-    result := {
-        "documentId": document.id,
-        "resourceType": "azurerm_storage_account",
-        "resourceName": terraLib.get_resource_name(resource, name),
-        "searchKey": sprintf("azurerm_storage_account[%s].%s.cors_rule[%d].allowed_origins[%d]", [name, svc, ridx, oidx]),
-        "issueType": "IncorrectValue",
-        "keyExpectedValue": sprintf("allowed_origins entries must be in %v", [allowed_origins]),
-        "keyActualValue": sprintf("allowed_origins entry '%v' is not authorized", [origin]),
-        "resourceTags": terraLib.get_resource_tags(resource),
-    }
-}
-
-# Unauthorized method
-WizPolicy[result] {
-    document := input.document[i]
-    resource := document.resource.azurerm_storage_account[name]
-    svc := cors_service_blocks[_]
-    block := terraLib.getValueArrayOrObject(object.get(resource, svc, {}))
-    rule := terraLib.getArray(block.cors_rule)[ridx]
+    v := [sprintf("allowed_origins[%d]", [oidx]), sprintf("allowed_origins entries must be in %v", [allowed_origins]), sprintf("allowed_origins entry '%v' is not authorized", [origin])]
+} | {v |
     method := rule.allowed_methods[midx]
     not allowed_methods[method]
-    result := {
-        "documentId": document.id,
-        "resourceType": "azurerm_storage_account",
-        "resourceName": terraLib.get_resource_name(resource, name),
-        "searchKey": sprintf("azurerm_storage_account[%s].%s.cors_rule[%d].allowed_methods[%d]", [name, svc, ridx, midx]),
-        "issueType": "IncorrectValue",
-        "keyExpectedValue": sprintf("allowed_methods entries must be in %v", [allowed_methods]),
-        "keyActualValue": sprintf("allowed_methods entry '%v' is not authorized", [method]),
-        "resourceTags": terraLib.get_resource_tags(resource),
-    }
-}
-
-# Unauthorized request header
-WizPolicy[result] {
-    document := input.document[i]
-    resource := document.resource.azurerm_storage_account[name]
-    svc := cors_service_blocks[_]
-    block := terraLib.getValueArrayOrObject(object.get(resource, svc, {}))
-    rule := terraLib.getArray(block.cors_rule)[ridx]
+    v := [sprintf("allowed_methods[%d]", [midx]), sprintf("allowed_methods entries must be in %v", [allowed_methods]), sprintf("allowed_methods entry '%v' is not authorized", [method])]
+} | {v |
     header := rule.allowed_headers[hidx]
     not allowed_headers[header]
-    result := {
-        "documentId": document.id,
-        "resourceType": "azurerm_storage_account",
-        "resourceName": terraLib.get_resource_name(resource, name),
-        "searchKey": sprintf("azurerm_storage_account[%s].%s.cors_rule[%d].allowed_headers[%d]", [name, svc, ridx, hidx]),
-        "issueType": "IncorrectValue",
-        "keyExpectedValue": sprintf("allowed_headers entries must be in %v", [allowed_headers]),
-        "keyActualValue": sprintf("allowed_headers entry '%v' is not authorized", [header]),
-        "resourceTags": terraLib.get_resource_tags(resource),
-    }
-}
-
-# Unauthorized exposed header
-WizPolicy[result] {
-    document := input.document[i]
-    resource := document.resource.azurerm_storage_account[name]
-    svc := cors_service_blocks[_]
-    block := terraLib.getValueArrayOrObject(object.get(resource, svc, {}))
-    rule := terraLib.getArray(block.cors_rule)[ridx]
+    v := [sprintf("allowed_headers[%d]", [hidx]), sprintf("allowed_headers entries must be in %v", [allowed_headers]), sprintf("allowed_headers entry '%v' is not authorized", [header])]
+} | {v |
     header := rule.exposed_headers[hidx]
     not allowed_exposed_headers[header]
-    result := {
-        "documentId": document.id,
-        "resourceType": "azurerm_storage_account",
-        "resourceName": terraLib.get_resource_name(resource, name),
-        "searchKey": sprintf("azurerm_storage_account[%s].%s.cors_rule[%d].exposed_headers[%d]", [name, svc, ridx, hidx]),
-        "issueType": "IncorrectValue",
-        "keyExpectedValue": sprintf("exposed_headers entries must be in %v", [allowed_exposed_headers]),
-        "keyActualValue": sprintf("exposed_headers entry '%v' is not authorized", [header]),
-        "resourceTags": terraLib.get_resource_tags(resource),
-    }
+    v := [sprintf("exposed_headers[%d]", [hidx]), sprintf("exposed_headers entries must be in %v", [allowed_exposed_headers]), sprintf("exposed_headers entry '%v' is not authorized", [header])]
+} | {v |
+    rule.max_age_in_seconds > max_authorized_age
+    v := ["max_age_in_seconds", sprintf("max_age_in_seconds must be <= %d", [max_authorized_age]), sprintf("max_age_in_seconds is %v (exceeds cap)", [rule.max_age_in_seconds])]
 }
 
-# max_age_in_seconds exceeds the cap
+# --- Logic ---
+# One finding per CORS field outside the authorized sets, in the blob, file,
+# queue and table services.
 WizPolicy[result] {
     document := input.document[i]
-    resource := document.resource.azurerm_storage_account[name]
-    svc := cors_service_blocks[_]
-    block := terraLib.getValueArrayOrObject(object.get(resource, svc, {}))
-    rule := terraLib.getArray(block.cors_rule)[ridx]
-    rule.max_age_in_seconds > max_authorized_age
+    entry := tf_cors_rules(document)[_]
+    v := tf_cors_violations(entry.rule)[_]
+
     result := {
         "documentId": document.id,
-        "resourceType": "azurerm_storage_account",
-        "resourceName": terraLib.get_resource_name(resource, name),
-        "searchKey": sprintf("azurerm_storage_account[%s].%s.cors_rule[%d].max_age_in_seconds", [name, svc, ridx]),
+        "resourceType": entry.type,
+        "resourceName": terraLib.get_resource_name(entry.resource, entry.name),
+        "searchKey": sprintf("%s[%s].%s.%s", [entry.type, entry.name, entry.path, v[0]]),
         "issueType": "IncorrectValue",
-        "keyExpectedValue": sprintf("max_age_in_seconds must be <= %d", [max_authorized_age]),
-        "keyActualValue": sprintf("max_age_in_seconds is %d (exceeds cap)", [rule.max_age_in_seconds]),
-        "resourceTags": terraLib.get_resource_tags(resource),
+        "keyExpectedValue": v[1],
+        "keyActualValue": v[2],
+        "resourceTags": terraLib.get_resource_tags(entry.resource),
     }
 }

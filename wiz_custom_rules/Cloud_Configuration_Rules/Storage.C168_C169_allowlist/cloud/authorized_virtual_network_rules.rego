@@ -10,20 +10,18 @@ authorized_subnet_ids := {
 # --- Logic ---
 default result := "pass"
 
-authorized_lower := {lower(s) | s := authorized_subnet_ids[_]}
-
 vnet_rules := rules {
     acls := object.get(object.get(input, "properties", {}), "networkAcls", {})
     rules := object.get(acls, "virtualNetworkRules", [])
     is_array(rules)
 } else := []
 
+# Full subnet IDs, compared segment by segment without regard to case. A rule
+# whose ID cannot be read is not authorized.
 unauthorized_subnets := {id |
     rule := vnet_rules[_]
-    id := object.get(rule, "id", "")
-    is_string(id)
-    id != ""
-    not authorized_lower[lower(id)]
+    id := object.get(rule, "id", "(no subnet ID)")
+    not tocm_azure_id_allowed(id, authorized_subnet_ids)
 }
 
 result := "skip" {
@@ -40,3 +38,22 @@ currentConfiguration := sprintf("Virtual network rules name unauthorized subnets
 } else := sprintf("%v virtual network rule(s), all authorized", [count(vnet_rules)])
 
 expectedConfiguration := "Every virtual network rule names an authorized subnet"
+
+# --- Matching helpers ---
+# --- toc-match begin: azureid v1 ---
+# Azure resource IDs compare case-insensitively, segment by segment.
+tocm_azure_id_norm(id) := n {
+    is_string(id)
+    n := lower(trim_suffix(trim_space(id), "/"))
+    startswith(n, "/subscriptions/")
+    not contains(n, "//")
+}
+
+tocm_azure_id_equal(a, b) {
+    tocm_azure_id_norm(a) == tocm_azure_id_norm(b)
+}
+
+tocm_azure_id_allowed(id, allowed) {
+    tocm_azure_id_equal(id, allowed[_])
+}
+# --- toc-match end: azureid v1 ---

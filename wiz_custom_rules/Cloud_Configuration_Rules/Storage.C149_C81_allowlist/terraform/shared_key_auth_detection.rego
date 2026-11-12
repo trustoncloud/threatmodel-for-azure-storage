@@ -5,6 +5,10 @@ import data.generic.terraform as terraLib
 # --- Configuration ---
 required_secure_accounts := {"examplefinancearchive", "exampleauditlogs", "examplecustomerdata"}
 
+# Also require Microsoft Entra ID (OAuth) as the default authorization in the
+# portal. Shared Key must be off whatever this is set to.
+require_oauth_default := true
+
 # --- Helpers ---
 is_true(v) { v == true } else { v == "true" }
 is_false(v) { v == false } else { v == "false" }
@@ -48,6 +52,7 @@ WizPolicy[result] {
     document := input.document[i]
     resource := document.resource.azurerm_storage_account[name]
     required_secure_accounts[resource.name]
+    require_oauth_default
     not oauth_default(resource)
 
     result := {

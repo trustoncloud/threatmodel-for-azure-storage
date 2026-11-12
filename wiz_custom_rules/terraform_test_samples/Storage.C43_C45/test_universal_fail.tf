@@ -1,5 +1,5 @@
 # This is testing Storage.C45 (storage_firewall_restricted) - universal variant
-# Expected outcome: VIOLATING (2 findings: universal permits no IP rules)
+# Expected outcome: VIOLATING (3 findings)
 
 # Test case 1: Inline firewall restricted to an IP rule (even the allowlist IP fails universal)
 resource "azurerm_storage_account" "violating_c45_universal_inline" {
@@ -27,4 +27,26 @@ resource "azurerm_storage_account_network_rules" "standalone_violating" {
   storage_account_id = azurerm_storage_account.violating_c45_universal_standalone.id
   default_action     = "Deny"
   ip_rules           = ["40.70.150.50"] # Violating (universal allows no IP rules)
+}
+
+# No firewall; the only standalone rules belong to the account next door: 1 finding
+resource "azurerm_storage_account" "fw_lookalike" {
+  name                     = "fwlookalikeuni"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_storage_account" "fw_lookalike_2" {
+  name                     = "fwlookalikeuni2"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_storage_account_network_rules" "fw_lookalike_2" {
+  storage_account_id = azurerm_storage_account.fw_lookalike_2.id
+  default_action     = "Deny"
 }

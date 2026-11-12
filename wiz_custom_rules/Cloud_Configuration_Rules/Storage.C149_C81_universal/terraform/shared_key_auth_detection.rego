@@ -2,6 +2,11 @@ package wiz
 
 import data.generic.terraform as terraLib
 
+# --- Configuration ---
+# Also require Microsoft Entra ID (OAuth) as the default authorization in the
+# portal. Shared Key must be off whatever this is set to.
+require_oauth_default := true
+
 # --- Helpers ---
 is_true(v) { v == true } else { v == "true" }
 is_false(v) { v == false } else { v == "false" }
@@ -43,6 +48,7 @@ WizPolicy[result] {
 WizPolicy[result] {
     document := input.document[i]
     resource := document.resource.azurerm_storage_account[name]
+    require_oauth_default
     not oauth_default(resource)
 
     result := {

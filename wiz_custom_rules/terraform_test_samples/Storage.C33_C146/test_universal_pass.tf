@@ -15,6 +15,19 @@ resource "azurerm_storage_container" "data" {
 }
 
 resource "azurerm_storage_container_immutability_policy" "data_imm" {
-  storage_container_resource_manager_id = azurerm_storage_container.data.resource_manager_id
+  storage_container_resource_manager_id = azurerm_storage_container.data.id
   immutability_period_in_days           = 90
+}
+
+# Container and policy created with count; the policy references the container by instance index
+resource "azurerm_storage_container" "counted" {
+  count              = 1
+  name               = "counted"
+  storage_account_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rg-test/providers/Microsoft.Storage/storageAccounts/examplecounted"
+}
+
+resource "azurerm_storage_container_immutability_policy" "counted" {
+  count                                 = 1
+  storage_container_resource_manager_id = azurerm_storage_container.counted[0].id
+  immutability_period_in_days           = 30
 }

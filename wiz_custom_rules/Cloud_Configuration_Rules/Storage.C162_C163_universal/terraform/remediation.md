@@ -10,6 +10,8 @@ resource "azurerm_storage_account_local_user" "example" {
 }
 ```
 
+This mode reports SFTP with local users on any account and any local user that may sign in with a password. Which local users exist and the permissions each one holds are reviewed in the allowlist mode only.
+
 ## References
 
 - [azurerm_storage_account (hashicorp/azurerm 5.10.0)](https://registry.terraform.io/providers/hashicorp/azurerm/5.10.0/docs/resources/storage_account)

@@ -9,6 +9,8 @@ resource "azurerm_storage_account" "example" {
 }
 ```
 
+A storage account with neither a `network_rules` block nor an `azurerm_storage_account_network_rules` resource in the same configuration allows every network and is reported. The standalone resource counts when its `storage_account_id` references the account or gives the account's literal resource ID.
+
 ## References
 
 - [azurerm_storage_account (hashicorp/azurerm 5.10.0)](https://registry.terraform.io/providers/hashicorp/azurerm/5.10.0/docs/resources/storage_account)

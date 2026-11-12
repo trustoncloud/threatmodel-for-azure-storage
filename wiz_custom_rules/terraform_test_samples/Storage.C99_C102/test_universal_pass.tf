@@ -14,3 +14,20 @@ resource "azurerm_storage_account" "modern_smb_only" {
     }
   }
 }
+
+# Block blob account: no file service
+resource "azurerm_storage_account" "block_blob" {
+  name                     = "exampleblockblob"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_kind             = "BlockBlobStorage"
+  account_tier             = "Premium"
+  account_replication_type = "LRS"
+}
+
+# SMB share (the default protocol)
+resource "azurerm_storage_share" "smb_share" {
+  name               = "smbshare"
+  storage_account_id = azurerm_storage_account.modern_smb_only.id
+  quota              = 50
+}
