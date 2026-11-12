@@ -1,6 +1,6 @@
 # Remediation
 
-The account in the finding admits traffic from an IP range that is not authorized, or its firewall does not deny by default. Remove the rule and deny other traffic:
+The account in the finding admits traffic from an IP range that is not authorized, or its firewall does not deny by default. An account with no firewall settings allows every network. Remove the rule and deny other traffic:
 
 ```bash
 az storage account network-rule remove --account-name <account-name> --resource-group <resource-group> --ip-address <ip-range>

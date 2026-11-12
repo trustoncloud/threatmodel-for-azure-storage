@@ -11,14 +11,20 @@ authorized_ips := {
 
 default result := "pass"
 
-# Helper: Check if network rules exist
-has_network_acls {
-    input.properties.networkAcls != null
-}
+# Network rules; an absent or null networkAcls leaves Azure's default action, Allow.
+network_acls := object.get(input.properties, "networkAcls", null)
 
-# Rule 1: Identify if the default action is 'Allow' (Publicly open)
+default_action := object.get(network_acls, "defaultAction", "Allow") {
+    is_object(network_acls)
+} else := "Allow"
+
+ip_rules := object.get(network_acls, "ipRules", []) {
+    is_object(network_acls)
+} else := []
+
+# Rule 1: Identify if the default action is not 'Deny' (publicly open)
 public_by_default {
-    input.properties.networkAcls.defaultAction == "Allow"
+    default_action != "Deny"
 }
 
 # An IP rule is authorized if it exactly matches an allowlist entry, or
@@ -36,16 +42,18 @@ ip_authorized(ip) {
 
 # Rule 2: Identify any unauthorized IP in the firewall list
 unauthorized_ip_rules[ip] {
-    rule := input.properties.networkAcls.ipRules[_]
+    rule := ip_rules[_]
     ip := rule.value
     not ip_authorized(ip)
 }
 
 # Logic Chain
+has_properties {
+    is_object(input.properties)
+}
+
 result := "skip" {
-    not input.properties
-} else := "skip" {
-    not has_network_acls
+    not has_properties
 } else := "fail" {
     public_by_default
 } else := "fail" {
@@ -53,9 +61,6 @@ result := "skip" {
 }
 
 # --- Metadata ---
-
-actual_default := input.properties.networkAcls.defaultAction { has_network_acls } else := "unknown"
-
-currentConfiguration := sprintf("Default action: '%v'. Unauthorized IPs found: %v", [actual_default, unauthorized_ip_rules])
+currentConfiguration := sprintf("Default action: '%v'. Unauthorized IPs found: %v", [default_action, unauthorized_ip_rules])
 
 expectedConfiguration := "defaultAction must be 'Deny' and all ipRules must be in the authorized list."

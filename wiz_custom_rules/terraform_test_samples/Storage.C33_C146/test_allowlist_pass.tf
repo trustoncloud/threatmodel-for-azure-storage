@@ -15,7 +15,7 @@ resource "azurerm_storage_container" "finance" {
 }
 
 resource "azurerm_storage_container_immutability_policy" "finance_imm" {
-  storage_container_resource_manager_id = azurerm_storage_container.finance.resource_manager_id
+  storage_container_resource_manager_id = azurerm_storage_container.finance.id
   immutability_period_in_days           = 30
 }
 

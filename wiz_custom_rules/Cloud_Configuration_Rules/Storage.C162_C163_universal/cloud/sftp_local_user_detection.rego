@@ -24,4 +24,4 @@ currentConfiguration := sprintf("SFTP enabled: %v, local users enabled: %v", [
     object.get(props, "isLocalUserEnabled", true)
 ])
 
-expectedConfiguration := "SFTP with local users is disabled on every storage account"
+expectedConfiguration := "SFTP with local users is disabled on every storage account. Local users, their permissions and sign-in methods are not part of the account data."

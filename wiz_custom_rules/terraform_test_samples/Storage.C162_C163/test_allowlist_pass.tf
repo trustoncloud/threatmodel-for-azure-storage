@@ -32,3 +32,25 @@ resource "azurerm_storage_account" "no_sftp" {
   account_replication_type = "LRS"
   is_hns_enabled           = true
 }
+
+# Authorized local user on the authorized account by literal ID, read and list only
+resource "azurerm_storage_account_local_user" "vendor_by_id" {
+  name               = "examplevendor"
+  storage_account_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/example-rg/providers/Microsoft.Storage/storageAccounts/examplevendorupload"
+  ssh_key_enabled    = true
+
+  ssh_authorized_key {
+    key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJEAC86WUl23i3Fb98LXfRiIqhWrk3ARrd2RwLFsnVbS example"
+  }
+
+  permission_scope {
+    service       = "blob"
+    resource_name = "inbound"
+
+    permissions {
+      read  = true
+      list  = true
+      write = true
+    }
+  }
+}

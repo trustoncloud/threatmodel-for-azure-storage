@@ -1,4 +1,4 @@
-List no method from `forbidden_methods`:
+List no method from `forbidden_methods`. An omitted list, `smb` block or `share_properties` block keeps Azure's default, which allows every option; accounts of kind `BlockBlobStorage` and `BlobStorage` have no file shares and are not checked. A value the source scan cannot resolve is reported.
 
 ```hcl
 resource "azurerm_storage_account" "example" {
@@ -10,6 +10,8 @@ resource "azurerm_storage_account" "example" {
   }
 }
 ```
+
+A variable that declares a default is checked at that default, because the scan reads the Terraform source. Terraform can deploy a value passed in its place, and a passing scan does not cover that value.
 
 ## References
 

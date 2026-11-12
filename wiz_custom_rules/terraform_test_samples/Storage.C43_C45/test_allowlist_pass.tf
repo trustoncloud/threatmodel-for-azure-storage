@@ -28,3 +28,17 @@ resource "azurerm_storage_account_network_rules" "standalone_compliant" {
   default_action     = "Deny"
   ip_rules           = ["40.70.150.50"]
 }
+
+# Standalone rules linked by the account's literal resource ID, Deny, no ip_rules
+resource "azurerm_storage_account" "compliant_c45_literal_id" {
+  name                     = "compliantliteralall"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+resource "azurerm_storage_account_network_rules" "literal_id" {
+  storage_account_id = "/subscriptions/123/resourceGroups/rg-test/providers/Microsoft.Storage/storageAccounts/compliantliteralall"
+  default_action     = "Deny"
+}

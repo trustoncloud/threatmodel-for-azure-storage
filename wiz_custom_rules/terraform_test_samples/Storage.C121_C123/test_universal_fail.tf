@@ -30,3 +30,28 @@ resource "azurerm_storage_account" "mixed_smb" {
     }
   }
 }
+
+# share_properties omitted, account_kind omitted (StorageV2): both lists at the Azure default: 2 findings
+resource "azurerm_storage_account" "default_smb" {
+  name                     = "exampledefaultshare"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+}
+
+# FileStorage account, smb block declared empty of encryption lists: 2 findings
+resource "azurerm_storage_account" "file_storage_default" {
+  name                     = "examplefilestorage"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_kind             = "FileStorage"
+  account_tier             = "Premium"
+  account_replication_type = "LRS"
+
+  share_properties {
+    smb {
+      versions = ["SMB3.1.1"]
+    }
+  }
+}

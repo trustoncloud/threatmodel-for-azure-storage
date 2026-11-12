@@ -1,63 +1,66 @@
 package wiz
 
 # --- Configuration ---
-# Required accounts for strict enforcement
+# Storage accounts whose file shares must allow only the configured SMB encryption.
 required_secure_shares := {"examplefinanceshare", "examplehrshare"}
 
-# Using the exact strings from Microsoft documentation
+# Values as Azure names them.
 required_kerberos := "AES-256"
 required_channel := "AES-256-GCM"
 
 # --- Logic ---
-
 default result := "pass"
 
-# SMB protocol settings live under the file-service object Wiz aggregates
-# onto the storage account.
-smb_settings := val {
-    val := input.AccountStorageServicesFileServiceProperties.properties.protocolSettings.smb
+# Values Azure allows when a setting is absent or empty.
+azure_default_smb_values := {
+    "kerberosTicketEncryption": {"RC4-HMAC", "AES-256"},
+    "channelEncryption": {"AES-128-CCM", "AES-128-GCM", "AES-256-GCM"},
 }
 
-has_smb_settings {
-    smb_settings != null
+# SMB protocol settings live under the file-service object on the storage
+# account as ";"-separated strings; the object is absent or null on account
+# kinds without file shares.
+file_service := fs {
+    fs := input.AccountStorageServicesFileServiceProperties
+    is_object(fs)
 }
 
-is_required_share {
-    required_secure_shares[input.name]
-}
+smb_settings := s {
+    s := file_service.properties.protocolSettings.smb
+    is_object(s)
+} else := {}
 
-# Logic to check if the required value is present in the delimited string
-# Traditional syntax uses 'split' and index matching
+setting_text(key) := v {
+    v := smb_settings[key]
+    is_string(v)
+} else := ""
+
+configured(key) := {v | v := split(setting_text(key), ";")[_]; v != ""}
+
+effective(key) := configured(key) {
+    count(configured(key)) > 0
+} else := azure_default_smb_values[key]
+
+other_values(key, required) := {v | v := effective(key)[_]; v != required}
+
 is_compliant {
-    # Check Kerberos
-    kerberos_parts := split(smb_settings.kerberosTicketEncryption, ";")
-    kerberos_parts[_] == required_kerberos
-    
-    # Check Channel Encryption
-    channel_parts := split(smb_settings.channelEncryption, ";")
-    channel_parts[_] == required_channel
+    count(other_values("kerberosTicketEncryption", required_kerberos)) == 0
+    count(other_values("channelEncryption", required_channel)) == 0
 }
 
-# Logic Chain
 result := "skip" {
-    not has_smb_settings
+    not file_service
 } else := "pass" {
-    not is_required_share
+    not required_secure_shares[input.name]
 } else := "fail" {
-    is_required_share
     not is_compliant
 }
 
 # --- Metadata ---
+shown(key) := "Azure default (all options)" {
+    count(configured(key)) == 0
+} else := setting_text(key)
 
-current_kerberos := val {
-    val := smb_settings.kerberosTicketEncryption
-} else := "undefined"
+currentConfiguration := sprintf("kerberosTicketEncryption='%v', channelEncryption='%v' for account '%v'", [shown("kerberosTicketEncryption"), shown("channelEncryption"), input.name])
 
-current_channel := val {
-    val := smb_settings.channelEncryption
-} else := "undefined"
-
-currentConfiguration := sprintf("kerberosTicketEncryption='%v', channelEncryption='%v' for account '%v'", [current_kerberos, current_channel, input.name])
-
-expectedConfiguration := sprintf("Required file shares must include '%v' for Kerberos and '%v' for Channel Encryption in their settings.", [required_kerberos, required_channel])
+expectedConfiguration := sprintf("Required accounts allow only '%v' Kerberos and '%v' channel encryption, as the configured policy; an empty setting allows every supported value.", [required_kerberos, required_channel])

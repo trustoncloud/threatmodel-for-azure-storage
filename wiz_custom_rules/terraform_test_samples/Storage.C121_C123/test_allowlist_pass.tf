@@ -31,3 +31,13 @@ resource "azurerm_storage_account" "non_required" {
     }
   }
 }
+
+# Required account name on a block blob account: no file service
+resource "azurerm_storage_account" "required_block_blob" {
+  name                     = "examplehrshare"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_kind             = "BlockBlobStorage"
+  account_tier             = "Premium"
+  account_replication_type = "LRS"
+}

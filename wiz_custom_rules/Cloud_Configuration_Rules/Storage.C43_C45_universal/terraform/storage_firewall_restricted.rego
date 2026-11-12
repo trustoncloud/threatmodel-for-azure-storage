@@ -3,15 +3,46 @@ package wiz
 import data.generic.terraform as terraLib
 
 # --- Helpers ---
-has_associated_network_rules(document, resource, name) {
-    standalone := document.resource.azurerm_storage_account_network_rules[sName]
-    terraLib.associatedResources(resource, standalone, name, sName, null, "storage_account_id")
+# The parts of a whole-value reference such as "${azurerm_storage_account.sa.id}".
+tf_ref_parts(v) := parts {
+    is_string(v)
+    m := regex.find_all_string_submatch_n(`^\$\{([^${}]+)\}$`, trim_space(v), 1)
+    count(m) == 1
+    parts := [p | q := split(m[0][1], ".")[_]; p := regex.replace(q, `\[[^\]]*\]$`, "")]
+}
+
+# storage_account_id names this account: a reference to it, or its literal ID.
+tf_names_account(ref, name, _) {
+    parts := tf_ref_parts(ref)
+    count(parts) == 3
+    parts[0] == "azurerm_storage_account"
+    parts[1] == name
+    parts[2] == "id"
+}
+
+tf_names_account(ref, _, resource) {
+    seg := split(tocm_azure_id_norm(ref), "/")
+    count(seg) == 9
+    seg[3] == "resourcegroups"
+    seg[5] == "providers"
+    seg[6] == "microsoft.storage"
+    seg[7] == "storageaccounts"
+    is_string(resource.name)
+    is_string(resource.resource_group_name)
+    seg[4] == lower(resource.resource_group_name)
+    seg[8] == lower(resource.name)
+}
+
+# True if a standalone azurerm_storage_account_network_rules resource in this
+# document is linked to the given account (via storage_account_id).
+tf_has_associated_network_rules(document, resource, name) {
+    standalone := document.resource.azurerm_storage_account_network_rules[_]
+    tf_names_account(object.get(standalone, "storage_account_id", ""), name, resource)
 }
 
 # --- Logic ---
-# Universal (private mode): the firewall must have default_action 'Deny' and
-# NO ip_rules (access via private endpoints / trusted services only). Scan
-# the inline block, the standalone resource, and the absence case.
+# Universal: the firewall must have default_action 'Deny' and no ip_rules.
+# Scan the inline block, the standalone resource, and the absence case.
 
 # Surface 1 (inline): default_action = Allow (public)
 WizPolicy[result] {
@@ -33,7 +64,7 @@ WizPolicy[result] {
     }
 }
 
-# Surface 1 (inline): any ip_rule present (none allowed in private mode)
+# Surface 1 (inline): any ip_rule present
 WizPolicy[result] {
     document := input.document[i]
     resource := document.resource.azurerm_storage_account[name]
@@ -47,7 +78,7 @@ WizPolicy[result] {
         "resourceName": terraLib.get_resource_name(resource, name),
         "searchKey": sprintf("azurerm_storage_account[%s].network_rules.ip_rules[%d]", [name, idx]),
         "issueType": "IncorrectValue",
-        "keyExpectedValue": "network_rules.ip_rules must be empty (private mode allows no IP rules)",
+        "keyExpectedValue": "network_rules.ip_rules must be empty",
         "keyActualValue": sprintf("network_rules.ip_rules[%d] is '%v' (no IP rules permitted)", [idx, ip]),
         "resourceTags": terraLib.get_resource_tags(resource),
     }
@@ -85,7 +116,7 @@ WizPolicy[result] {
         "resourceName": terraLib.get_resource_name(standalone, sName),
         "searchKey": sprintf("azurerm_storage_account_network_rules[%s].ip_rules[%d]", [sName, idx]),
         "issueType": "IncorrectValue",
-        "keyExpectedValue": "ip_rules must be empty (private mode allows no IP rules)",
+        "keyExpectedValue": "ip_rules must be empty",
         "keyActualValue": sprintf("ip_rules[%d] is '%v' (no IP rules permitted)", [idx, ip]),
         "resourceTags": terraLib.get_resource_tags(standalone),
     }
@@ -98,7 +129,7 @@ WizPolicy[result] {
     resource := document.resource.azurerm_storage_account[name]
 
     not terraLib.validKey(resource, "network_rules")
-    not has_associated_network_rules(document, resource, name)
+    not tf_has_associated_network_rules(document, resource, name)
 
     result := {
         "documentId": document.id,
@@ -111,3 +142,22 @@ WizPolicy[result] {
         "resourceTags": terraLib.get_resource_tags(resource),
     }
 }
+
+# --- Matching helpers ---
+# --- toc-match begin: azureid v1 ---
+# Azure resource IDs compare case-insensitively, segment by segment.
+tocm_azure_id_norm(id) := n {
+    is_string(id)
+    n := lower(trim_suffix(trim_space(id), "/"))
+    startswith(n, "/subscriptions/")
+    not contains(n, "//")
+}
+
+tocm_azure_id_equal(a, b) {
+    tocm_azure_id_norm(a) == tocm_azure_id_norm(b)
+}
+
+tocm_azure_id_allowed(id, allowed) {
+    tocm_azure_id_equal(id, allowed[_])
+}
+# --- toc-match end: azureid v1 ---

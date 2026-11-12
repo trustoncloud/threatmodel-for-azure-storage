@@ -15,3 +15,13 @@ resource "azurerm_storage_account" "strong_only" {
     }
   }
 }
+
+# Block blob account: no file service
+resource "azurerm_storage_account" "block_blob" {
+  name                     = "exampleblockblob"
+  resource_group_name      = "rg-test"
+  location                 = "eastus"
+  account_kind             = "BlockBlobStorage"
+  account_tier             = "Premium"
+  account_replication_type = "LRS"
+}

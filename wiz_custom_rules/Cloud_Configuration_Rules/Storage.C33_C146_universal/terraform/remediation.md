@@ -7,6 +7,8 @@ resource "azurerm_storage_container_immutability_policy" "example" {
 }
 ```
 
+The policy must reference the container resource, as above. A policy that names the container by a literal ID, or that is declared outside the scanned configuration, is not counted, so the container is reported.
+
 ## References
 
 - [azurerm_storage_container_immutability_policy (hashicorp/azurerm 5.10.0)](https://registry.terraform.io/providers/hashicorp/azurerm/5.10.0/docs/resources/storage_container_immutability_policy)

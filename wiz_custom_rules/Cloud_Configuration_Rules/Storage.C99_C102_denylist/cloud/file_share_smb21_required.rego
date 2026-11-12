@@ -6,25 +6,52 @@ forbidden_versions := {"SMB2.1"}
 # --- Logic ---
 default result := "pass"
 
-# SMB protocol settings live under the file-service object Wiz aggregates
-# onto the storage account.
-smb_versions_string := val {
-    val := input.AccountStorageServicesFileServiceProperties.properties.protocolSettings.smb.versions
+# SMB versions Azure allows when the setting is absent or empty.
+azure_default_smb_versions := {"SMB2.1", "SMB3.0", "SMB3.1.1"}
+
+# SMB protocol settings live under the file-service object on the storage
+# account; the object is absent or null on account kinds without file shares.
+file_service := fs {
+    fs := input.AccountStorageServicesFileServiceProperties
+    is_object(fs)
 }
 
+smb_settings := s {
+    s := file_service.properties.protocolSettings.smb
+    is_object(s)
+} else := {}
+
+versions_setting := v {
+    v := smb_settings.versions
+    is_string(v)
+} else := ""
+
+configured_versions := {v | v := split(versions_setting, ";")[_]; v != ""}
+
+uses_azure_default {
+    count(configured_versions) == 0
+}
+
+effective_versions := configured_versions {
+    not uses_azure_default
+} else := azure_default_smb_versions
+
 violations[msg] {
-    parts := split(smb_versions_string, ";")
-    version := parts[_]
+    version := effective_versions[_]
     forbidden_versions[version]
-    msg := sprintf("Forbidden SMB version detected: %v", [version])
+    msg := sprintf("Forbidden SMB version allowed: %v", [version])
 }
 
 result := "skip" {
-    not smb_versions_string
+    not file_service
 } else := "fail" {
     count(violations) > 0
 }
 
 # --- Metadata ---
-currentConfiguration := sprintf("Violations: %v", [violations])
-expectedConfiguration := sprintf("The following SMB versions are strictly prohibited: %v", [forbidden_versions])
+shown_versions := sprintf("Azure default (all versions: %v)", [concat(";", sort(azure_default_smb_versions))]) {
+    uses_azure_default
+} else := versions_setting
+
+currentConfiguration := sprintf("SMB versions: '%v'. Violations: %v", [shown_versions, violations])
+expectedConfiguration := sprintf("The SMB versions setting lists none of %v; an empty setting allows every version. NFS is set per file share and is not part of the storage account data, so this check does not cover it.", [forbidden_versions])

@@ -17,8 +17,8 @@ resource "azurerm_storage_share" "unauthorized_policy" {
 
 # Two acl blocks: one authorized, one granting delete under the approved id: 1 finding
 resource "azurerm_storage_table" "delete_permission" {
-  name                 = "exampletable"
-  storage_account_name = "examplesapbad"
+  name               = "exampletable"
+  storage_account_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/example-rg/providers/Microsoft.Storage/storageAccounts/examplesapbad"
 
   acl {
     id = "examplereadonly"

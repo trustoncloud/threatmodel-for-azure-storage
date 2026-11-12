@@ -1,6 +1,6 @@
 # Remediation
 
-The account in the finding allows an SMB encryption method listed in `forbidden_methods`. Allow only strong ones:
+The account in the finding allows an SMB encryption method listed in `forbidden_methods`, either set explicitly or through an empty setting, which is Azure's default and allows every supported value. Allow only values that are not forbidden:
 
 ```bash
 az storage account file-service-properties update --account-name <account-name> --resource-group <resource-group> --kerb-ticket-encryption AES-256 --channel-encryption AES-256-GCM

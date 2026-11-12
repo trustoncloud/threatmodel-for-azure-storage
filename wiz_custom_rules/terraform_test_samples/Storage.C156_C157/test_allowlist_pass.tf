@@ -17,8 +17,8 @@ resource "azurerm_storage_share" "read_only_policy" {
 }
 
 resource "azurerm_storage_table" "read_only_policy" {
-  name                 = "exampletable"
-  storage_account_name = "examplesapok"
+  name               = "exampletable"
+  storage_account_id = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/example-rg/providers/Microsoft.Storage/storageAccounts/examplesapok"
 
   acl {
     id = "examplereadonly"

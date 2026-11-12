@@ -32,3 +32,19 @@ resource "azurerm_private_endpoint" "pe" {
     private_dns_zone_ids = [azurerm_private_dns_zone.blob.id]
   }
 }
+
+# Private endpoint of another service: not reviewed by this rule
+resource "azurerm_private_endpoint" "pe_key_vault" {
+  name                = "pe-vault"
+  location            = "eastus"
+  resource_group_name = "rg-test"
+  subnet_id           = "/subscriptions/123/resourceGroups/net-rg/providers/Microsoft.Network/virtualNetworks/vnet/subnets/pe-subnet"
+
+  private_service_connection {
+    name                           = "psc"
+    private_connection_resource_id = "/subscriptions/123/resourceGroups/sec-rg/providers/Microsoft.KeyVault/vaults/example-vault"
+    is_manual_connection           = true
+    request_message                = "please approve"
+    subresource_names              = ["vault"]
+  }
+}

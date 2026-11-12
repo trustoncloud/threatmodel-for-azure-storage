@@ -3,13 +3,15 @@ package wiz
 # --- Logic ---
 default result := "pass"
 
+connection_status(connection) := object.get(object.get(object.get(connection, "properties", {}), "privateLinkServiceConnectionState", {}), "status", "")
+
 violations[msg] {
     connection := input.properties.privateEndpointConnections[_]
-    status := connection.properties.privateLinkServiceConnectionState.status
-    
+    status := connection_status(connection)
+
     # Condition: Connection status is anything other than Approved
     status != "Approved"
-    msg := sprintf("Connection %v is in unapproved state: %v", [connection.name, status])
+    msg := sprintf("Connection '%v' is in unapproved state: '%v'", [object.get(connection, "name", ""), status])
 }
 
 result := "skip" {

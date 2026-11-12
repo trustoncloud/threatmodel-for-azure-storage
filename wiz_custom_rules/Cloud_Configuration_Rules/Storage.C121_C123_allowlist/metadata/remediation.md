@@ -1,12 +1,14 @@
 # Remediation
 
-The account in the finding is required to use strong SMB encryption and does not allow it. Set Kerberos and channel encryption:
+The account in the finding is required to follow the SMB encryption policy and also allows a Kerberos or channel encryption value outside it, or leaves one at Azure's default, which allows every supported value. Allow only the policy values:
 
 ```bash
 az storage account file-service-properties update --account-name <account-name> --resource-group <resource-group> --kerb-ticket-encryption AES-256 --channel-encryption AES-256-GCM
 ```
 
 The account list is `required_secure_shares` in the rule's configuration. Replace `<account-name>` and `<resource-group>` with the storage account in the finding.
+
+The default policy allows AES-256 Kerberos tickets and AES-256-GCM channel encryption only. Azure also supports AES-128-CCM and AES-128-GCM channel encryption; this policy excludes them by choice. Clients that cannot negotiate AES-256-GCM, such as older SMB clients, cannot connect when it is the only channel encryption allowed, so check your clients before applying it, and change `required_kerberos` and `required_channel` if your policy differs.
 
 ## References
 

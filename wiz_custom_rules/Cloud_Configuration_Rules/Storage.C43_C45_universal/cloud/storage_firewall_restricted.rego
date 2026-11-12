@@ -3,22 +3,31 @@ package wiz
 # --- Logic ---
 default result := "pass"
 
-has_network_acls {
-    input.properties.networkAcls != null
-}
+# Network rules; an absent or null networkAcls leaves Azure's default action, Allow.
+network_acls := object.get(input.properties, "networkAcls", null)
+
+default_action := object.get(network_acls, "defaultAction", "Allow") {
+    is_object(network_acls)
+} else := "Allow"
+
+ip_rules := object.get(network_acls, "ipRules", []) {
+    is_object(network_acls)
+} else := []
 
 public_by_default {
-    input.properties.networkAcls.defaultAction == "Allow"
+    default_action != "Deny"
 }
 
 has_any_ip_rules {
-    count(input.properties.networkAcls.ipRules) > 0
+    count(ip_rules) > 0
+}
+
+has_properties {
+    is_object(input.properties)
 }
 
 result := "skip" {
-    not input.properties
-} else := "skip" {
-    not has_network_acls
+    not has_properties
 } else := "fail" {
     public_by_default
 } else := "fail" {
@@ -26,5 +35,5 @@ result := "skip" {
 }
 
 # --- Metadata ---
-currentConfiguration := sprintf("Default action: '%v'. IP rules count: %v", [input.properties.networkAcls.defaultAction, count(input.properties.networkAcls.ipRules)])
-expectedConfiguration := "Storage firewall must have defaultAction set to 'Deny' and zero IP rules allowed (Universal Private mode)."
+currentConfiguration := sprintf("Default action: '%v'. IP rules count: %v", [default_action, count(ip_rules)])
+expectedConfiguration := "The storage firewall denies by default and lists no IP rules."

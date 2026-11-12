@@ -1,12 +1,25 @@
 package wiz
 
+# --- Configuration ---
+# Also require Microsoft Entra ID (OAuth) as the default authorization in the
+# portal. Shared Key must be off whatever this is set to.
+require_oauth_default := true
+
 # --- Logic ---
 default result := "pass"
 
-# Compliance Check: Shared Key must be FALSE and OAuth Default must be TRUE
+oauth_default_ok {
+    not require_oauth_default
+}
+
+oauth_default_ok {
+    input.properties.defaultToOAuthAuthentication == true
+}
+
+# Shared Key is off, and OAuth is the portal default when required.
 is_compliant {
     input.properties.allowSharedKeyAccess == false
-    input.properties.defaultToOAuthAuthentication == true
+    oauth_default_ok
 }
 
 # Logic Chain
@@ -26,4 +39,4 @@ oauth_status := val {
 } else := "false (Default)"
 
 currentConfiguration := sprintf("allowSharedKeyAccess='%v', defaultToOAuthAuthentication='%v'", [shared_key_status, oauth_status])
-expectedConfiguration := "Every storage account must have Shared Key access disabled (false) and default to OAuth (true)."
+expectedConfiguration := sprintf("Every storage account disables Shared Key; OAuth as the portal default required: %v", [require_oauth_default])
